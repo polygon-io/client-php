@@ -18,3 +18,4 @@ jobs:
           paths:
             - vendor
       - run: ./vendor/bin/phplint .
+      - run: ./vendor/bin/phpunit

@@ -1,6 +1,5 @@
 <?php
 namespace PolygonIO\rest;
-require '../../vendor/autoload.php';
 
 /**
  * Class RestResource

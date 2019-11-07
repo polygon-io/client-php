@@ -13,6 +13,7 @@
         "guzzlehttp/guzzle": "^6.4"
     },
     "require-dev": {
-        "overtrue/phplint": "^1.1"
+        "overtrue/phplint": "^1.1",
+        "phpunit/phpunit": "^8"
     }
 }
