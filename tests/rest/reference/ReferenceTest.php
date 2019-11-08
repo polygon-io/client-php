@@ -38,9 +38,9 @@ final class ReferenceTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/reference/tickers');
     }
 
-    private function getHttpMock(&$requestsContainer) {
+    private function getHttpMock(&$requestsContainer, $response=[]) {
         $mock = new MockHandler([
-            new Response(200, []),
+            new Response(200, $response),
         ]);
         $handler = HandlerStack::create($mock);
 
