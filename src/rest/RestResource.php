@@ -9,8 +9,7 @@ abstract class RestResource {
     protected $defaultParams = [];
     protected $route;
 
-    protected $resourceUrl;
-    protected $httpClient;
+    public $httpClient;
     protected $API_URL = 'https://api.polygon.io';
     protected $api_key;
 
@@ -22,22 +21,24 @@ abstract class RestResource {
     {
         $this->api_key = $apiKey;
         $this->httpClient = new \GuzzleHttp\Client();
-        $this->resourceUrl = $this->API_URL.$this->route;
     }
 
 
 
     protected function _get($route, $params = []){
-        $response = $this->httpClient->request('GET', $route, [
-            'query' => array_merge(
-                [
-                    'apiKey' => $this->api_key,
-                ],
-                array_merge(
-                    $this->defaultParams,
-                    $params
-                )
-            ),
+        $enhancedParams =  array_merge(
+            [
+                'apiKey' => $this->api_key,
+            ],
+            array_merge(
+                $this->defaultParams,
+                $params
+            )
+        );
+
+        $route = $this->API_URL.$route;
+        $response = $this->httpClient->get($route, [
+            'query' => $enhancedParams
         ]);
 
         return $this->mapper($response->getBody());

@@ -1,11 +1,20 @@
 <?php
 use PHPUnit\Framework\TestCase;
+
+use GuzzleHttp\Client;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Middleware;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\Psr7\Response;
+
 use PolygonIO\rest\reference\Reference;
+use PolygonIO\rest\reference\Tickers;
 
 final class ReferenceTest extends TestCase {
+
     public function testExportAllTheMethodsFromReferenceApi() {
         $reference = new Reference('fake-api-key');
-        $this->assertInstanceOf(\PolygonIO\rest\reference\Tickers::class, $reference->tickers);
+        $this->assertInstanceOf(Tickers::class, $reference->tickers);
         $this->assertInstanceOf(\PolygonIO\rest\reference\TickerTypes::class, $reference->tickerTypes);
         $this->assertInstanceOf(\PolygonIO\rest\reference\TickerDetails::class, $reference->tickerDetails);
         $this->assertInstanceOf(\PolygonIO\rest\reference\TickerNews::class, $reference->tickerNews);
@@ -17,4 +26,33 @@ final class ReferenceTest extends TestCase {
         $this->assertInstanceOf(\PolygonIO\rest\reference\MarketStatus::class, $reference->marketStatus);
         $this->assertInstanceOf(\PolygonIO\rest\reference\MarketHolidays::class, $reference->marketHolidays);
     }
+
+    public function testTickersGetCall() {
+        $requestsContainer = [];
+
+        $tickers = new Tickers('fake-api-key');
+        $tickers->httpClient = $this->getHttpMock($requestsContainer);
+
+        $tickers->get();
+
+        $this->assertPath($requestsContainer, '/v2/reference/tickers');
+    }
+
+    private function getHttpMock(&$requestsContainer) {
+        $mock = new MockHandler([
+            new Response(200, []),
+        ]);
+        $handler = HandlerStack::create($mock);
+
+        $history = Middleware::history($requestsContainer);
+        $handler->push($history);
+
+        return new Client(['handler' => $handler]);
+    }
+
+    private function assertPath($requests, $path) {
+        $this->assertCount(1, $requests);
+        $this->assertEquals($path, $requests[0]['request']->getUri()->getPath());
+    }
+
 }

@@ -19,7 +19,7 @@ class Tickers extends RestResource {
      * @param $params
      * @return mixed
      */
-    public function get($params) {
+    public function get($params = []) {
         return $this->_get($this->route, $params);
     }
 }
