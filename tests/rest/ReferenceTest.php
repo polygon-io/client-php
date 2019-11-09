@@ -20,8 +20,7 @@ use PolygonIO\rest\reference\StockFinancials;
 use PolygonIO\rest\reference\MarketStatus;
 use PolygonIO\rest\reference\MarketHolidays;
 
-final class ReferenceTest extends TestCase {
-
+class ReferenceTest extends TestCase {
     public function testExportAllTheMethodsFromReferenceApi() {
         $reference = new Reference('fake-api-key');
         $this->assertInstanceOf(Tickers::class, $reference->tickers);
