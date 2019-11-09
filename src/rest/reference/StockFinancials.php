@@ -13,7 +13,7 @@ class StockFinancials extends RestResource {
      * @param $params
      * @return mixed
      */
-    public function get($tickerSymbol, $params) {
+    public function get($tickerSymbol, $params = []) {
         return $this->_get('/v2/reference/financials/'.$tickerSymbol, $params);
     }
 }

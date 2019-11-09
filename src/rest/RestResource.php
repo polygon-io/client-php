@@ -23,8 +23,6 @@ abstract class RestResource {
         $this->httpClient = new \GuzzleHttp\Client();
     }
 
-
-
     protected function _get($route, $params = []){
         $enhancedParams =  array_merge(
             [
@@ -41,7 +39,9 @@ abstract class RestResource {
             'query' => $enhancedParams
         ]);
 
-        return $this->mapper($response->getBody());
+        $bodyString = $response->getBody()->getContents();
+        $json = json_decode($bodyString, true);
+        return $this->mapper($json);
     }
 
     protected function mapper($response) {
