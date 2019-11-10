@@ -1,11 +1,11 @@
 <?php
-namespace PolygonIO\rest\forex;
+namespace PolygonIO\rest\crypto;
 
 use PolygonIO\rest\Mappers;
 use PolygonIO\rest\RestResource;
 
 class GroupedDaily extends RestResource {
-    public function get($date, $locale = 'US', $market = 'FX', $params = []){
+    public function get($date, $locale = 'US', $market = 'CRYPTO', $params = []){
         return $this->_get('/v2/aggs/grouped/locale/'.$locale.'/market/'.$market.'/'.$date, $params);
     }
 

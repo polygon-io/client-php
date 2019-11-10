@@ -1,12 +1,12 @@
 <?php
-namespace PolygonIO\rest\forex;
+namespace PolygonIO\rest\crypto;
 
 use PolygonIO\rest\Mappers;
 use PolygonIO\rest\RestResource;
 
-class GroupedDaily extends RestResource {
-    public function get($date, $locale = 'US', $market = 'FX', $params = []){
-        return $this->_get('/v2/aggs/grouped/locale/'.$locale.'/market/'.$market.'/'.$date, $params);
+class Aggregates extends RestResource {
+    public function get($tickerSymbol, $multiplier, $from, $to, $timespan = 'days', $params = []){
+        return $this->_get('/v2/aggs/ticker/'.$tickerSymbol.'/range/'.$multiplier.'/'.$timespan.'/'.$from.'/'.$to, $params);
     }
 
     protected function mapper($response)

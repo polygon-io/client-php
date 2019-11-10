@@ -55,6 +55,7 @@ class Mappers {
         $snap['numberOfItems'] = $snap['n'];
         return $snap;
     }
+
     public static function snapshotTicker ($snap) {
         $snap['day'] = Mappers::snapshotAgg($snap['day']);
         $snap['lastTrade'] = Mappers::tradeV1($snap['lastTrade']);
@@ -62,5 +63,27 @@ class Mappers {
         $snap['min'] = Mappers::snapshotAgg($snap['min']);
         $snap['prevDay'] = Mappers::snapshotAgg($snap['prevDay']);
         return $snap;
+    }
+
+    public static function snapshotCryptoTicker ($snap) {
+        $snap['day'] = Mappers::snapshotAgg($snap['day']);
+        $snap['lastTrade'] = Mappers::cryptoTick($snap['lastTrade']);
+        $snap['min'] = Mappers::snapshotAgg($snap['min']);
+        $snap['prevDay'] = Mappers::snapshotAgg($snap['prevDay']);
+        return $snap;
+    }
+
+    public static function cryptoTick($tick) {
+        $tick['price'] = $tick['p'];
+        $tick['size'] = $tick['s'];
+        $tick['exchange'] = $tick['x'];
+        $tick['conditions'] = $tick['c'];
+        $tick['timestamp'] = $tick['t'];
+        return $tick;
+    }
+
+    public static function cryptoSnapshotBookItem ($item) {
+        $item['price'] = $item['p'];
+        return $item;
     }
 }
