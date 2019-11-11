@@ -6,7 +6,7 @@
 
 ### prerequisite
 
-- [composer]()
+- [composer](https://getcomposer.org/)
 - php > 7.2
 
 ### install
@@ -15,15 +15,48 @@
 composer require polygonio/api
 ```
 
-## Rest API
+## [Rest API](https://polygon.io/docs/#getting-started)
+
+The `\PolygonIO\rest\Rest` class export 4 modules:
+
+- reference
+- stocks
+- forex
+- crypto
+
+```
+<?php
+require __DIR__ . '/vendor/autload.php';
+use PolygonIO\rest\Rest;
+
+$rest = new Rest('your api key')
+
+print_r($rest->forex->realtimeCurrencyConverion->get('USD', 'EUR', 10));
+
+```
 
 ## Websockets
+
+```
+<?php
+require __DIR__ . '/vendor/autload.php';
+use PolygonIO;
+
+$client = new PolygonIO('your apiKey');
+
+$client->websockets->forex(
+    'C.USD',
+    function($data) {
+        // your handler function
+    }
+)
+```
 
 ## Developement
 
 ### prerequisite
 
-- [composer]()
+- [composer](https://getcomposer.org/)
 - php > 7.2
 
 ### use the tooling

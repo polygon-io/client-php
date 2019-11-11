@@ -10,7 +10,13 @@
         }
     ],
     "require": {
-        "guzzlehttp/guzzle": "^6.4"
+        "guzzlehttp/guzzle": "^6.4",
+        "amphp/websocket-client": "^0.2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "PolygonIO\\": "src/"
+        }
     },
     "require-dev": {
         "overtrue/phplint": "^1.1",
