@@ -37,6 +37,9 @@ print_r($rest->forex->realtimeCurrencyConverion->get('USD', 'EUR', 10));
 
 ## Websockets
 
+The websocket clients use the Amp event loop. 
+You can only use one websocket client by php thread since the event loop is in a blocking while loop.
+
 ```
 <?php
 require __DIR__ . '/vendor/autload.php';
