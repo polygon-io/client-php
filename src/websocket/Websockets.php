@@ -1,6 +1,6 @@
 <?php
 namespace PolygonIO\websockets;
-require(__DIR__.'/WebsocketResource.php');
+
 class Websockets {
     public $stocks;
     public $crypto;
