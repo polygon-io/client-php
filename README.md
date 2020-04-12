@@ -12,7 +12,7 @@
 ### install
 
 ``` 
-composer require polygonio/api
+composer require polygon-io/api
 ```
 
 ## [Rest API](https://polygon.io/docs/#getting-started)
