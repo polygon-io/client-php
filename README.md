@@ -1,6 +1,6 @@
 # Polygon.io php api client
 
-[![CircleCI](https://circleci.com/gh/bassochette/polygon.io-php.svg?style=svg)](https://circleci.com/gh/bassochette/polygon.io-php)
+[![CircleCI](https://circleci.com/gh/polygon-io/client-php.svg?style=svg)](https://circleci.com/gh/polygon-io/client-php)
 
 ## Installation guide
 
