@@ -8,7 +8,7 @@ use PolygonIO\rest\RestResource;
  * @package PolygonIO\rest\reference
  */
 class MarketHolidays extends RestResource {
-    protected $route = 'GET	/v1/marketstatus/upcoming';
+    protected $route = '/v1/marketstatus/upcoming';
 
     public function get() {
         return $this->_get($this->route);
