@@ -26,13 +26,14 @@ The `\PolygonIO\rest\Rest` class export 4 modules:
 
 ```
 <?php
-require __DIR__ . '/vendor/autload.php';
+require __DIR__ . '/vendor/autoload.php';
 use PolygonIO\rest\Rest;
 
-$rest = new Rest('your api key')
+$rest = new Rest('your api key');
 
-print_r($rest->forex->realtimeCurrencyConverion->get('USD', 'EUR', 10));
+print_r($rest->forex->realTimeCurrencyConversion->get('USD', 'EUR', 10));
 
+print_r($rest->stocks->dailyOpenClose->get('AAPL', date("2020-07-20")));
 ```
 
 ## Websockets
