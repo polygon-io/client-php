@@ -33,7 +33,7 @@ $rest = new Rest('your api key');
 
 print_r($rest->forex->realTimeCurrencyConversion->get('USD', 'EUR', 10));
 
-print_r($rest->stocks->dailyOpenClose->get('AAPL', date("2020-07-20")));
+print_r($rest->stocks->dailyOpenClose->get('AAPL', '2020-07-20'));
 ```
 
 ## Websockets
