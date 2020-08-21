@@ -10,8 +10,9 @@
         }
     ],
     "require": {
+        "ext-json": "*",
         "guzzlehttp/guzzle": "^6.4",
-        "amphp/websocket-client": "^0.2.4"
+        "amphp/websocket-client": "^0.2.4",
     },
     "autoload": {
         "psr-4": {
