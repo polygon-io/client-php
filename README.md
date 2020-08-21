@@ -26,7 +26,7 @@ The `\PolygonIO\rest\Rest` class export 4 modules:
 
 ```
 <?php
-require __DIR__ . '/vendor/autload.php';
+require __DIR__ . '/vendor/autoload.php';
 use PolygonIO\rest\Rest;
 
 $rest = new Rest('your api key')
@@ -42,7 +42,7 @@ You can only use one websocket client by php thread since the event loop is in a
 
 ```
 <?php
-require __DIR__ . '/vendor/autload.php';
+require __DIR__ . '/vendor/autoload.php';
 use PolygonIO;
 
 $client = new PolygonIO('your apiKey');
