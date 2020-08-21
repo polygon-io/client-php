@@ -52,7 +52,7 @@ $client->websockets->forex(
     function($data) {
         // your handler function
     }
-)
+);
 ```
 
 ## Developement
