@@ -1,9 +1,26 @@
 <?php
 namespace PolygonIO\websockets;
 
+/**
+ * Class Websockets
+ *
+ * @package PolygonIO\websockets
+ */
 class Websockets {
+
+    /**
+     * @var WebsocketResource
+     */
     public $stocks;
+
+    /**
+     * @var WebsocketResource
+     */
     public $crypto;
+
+    /**
+     * @var WebsocketResource
+     */
     public $forex;
 
     public function __construct($apiKey)

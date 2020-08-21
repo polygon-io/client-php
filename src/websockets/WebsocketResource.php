@@ -3,8 +3,20 @@ namespace PolygonIO\websockets;
 
 use \Amp\Websocket;
 
+/**
+ * Class WebsocketResource
+ *
+ * @package PolygonIO\websockets
+ */
 class WebsocketResource {
+    /**
+     * @var string
+     */
     public $SOCKET_URI;
+
+    /**
+     * @var string
+     */
     private $apiKey;
 
     public function __construct($topic, $apiKey)
