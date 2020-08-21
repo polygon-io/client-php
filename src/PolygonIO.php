@@ -1,6 +1,5 @@
 <?php
 namespace PolygonIO;
-require_once __DIR__.'/../vendor/autoload.php';
 
 use PolygonIO\rest\Rest;
 use PolygonIO\websockets\Websockets;
