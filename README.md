@@ -61,6 +61,7 @@ $client->websockets->forex->connect(
 
 - [composer](https://getcomposer.org/)
 - php > 7.2
+- ext-json
 
 ### use the tooling
 
