@@ -41,13 +41,13 @@ The websocket clients use the Amp event loop.
 You can only use one websocket client by php thread since the event loop is in a blocking while loop.
 
 ```
+
 <?php
 require __DIR__ . '/vendor/autoload.php';
-use PolygonIO;
 
-$client = new PolygonIO('your apiKey');
+$client = new PolygonIO\PolygonIO('your apiKey');
 
-$client->websockets->forex(
+$client->websockets->forex->connect(
     'C.USD',
     function($data) {
         // your handler function
