@@ -45,14 +45,14 @@ class Mappers {
     }
 
     public static function snapshotAggV2 ($snap) {
-        $snap['tickerSymbol'] = $snap['T'];
+        //$snap['tickerSymbol'] = $snap['T'];
         $snap['volume'] = $snap['v'];
         $snap['open'] = $snap['o'];
         $snap['close'] = $snap['c'];
         $snap['high'] = $snap['h'];
         $snap['low'] = $snap['l'];
         $snap['timestamp'] = $snap['t'];
-        $snap['numberOfItems'] = $snap['n'];
+        //$snap['numberOfItems'] = $snap['n'];
         return $snap;
     }
 
