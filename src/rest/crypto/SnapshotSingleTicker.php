@@ -1,7 +1,7 @@
 <?php
 namespace PolygonIO\rest\crypto;
 
-use PolygonIO\rest\Mappers;
+use PolygonIO\rest\common\Mappers;
 use PolygonIO\rest\RestResource;
 
 class SnapshotSingleTicker extends RestResource {

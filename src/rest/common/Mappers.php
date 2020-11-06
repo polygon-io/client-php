@@ -1,5 +1,5 @@
 <?php
-namespace PolygonIO\rest;
+namespace PolygonIO\rest\common;
 
 class Mappers {
     public static function quoteV1 ($tick) {

@@ -1,7 +1,7 @@
 <?php
 namespace PolygonIO\rest\stocks;
 
-use PolygonIO\rest\Mappers;
+use PolygonIO\rest\common\Mappers;
 use PolygonIO\rest\RestResource;
 
 class PreviousClose extends RestResource {

@@ -1,7 +1,7 @@
 <?php
 namespace PolygonIO\rest\forex;
 
-use PolygonIO\rest\Mappers;
+use PolygonIO\rest\common\Mappers;
 use PolygonIO\rest\RestResource;
 
 class GroupedDaily extends RestResource {
