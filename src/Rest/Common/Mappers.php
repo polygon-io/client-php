@@ -19,7 +19,7 @@ class Mappers {
         $q['bidSize'] = $q['s'];
         $q['askPrice'] = $q['P'];
         $q['askSize'] = $q['S'];
-        $q['lastUpdateTimestam'] = $q['t'];
+        $q['lastUpdateTimestamp'] = $q['t'];
         return $q;
     }
 
