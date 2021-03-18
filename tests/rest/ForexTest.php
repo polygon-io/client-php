@@ -1,5 +1,6 @@
 <?php
-namespace PolygonIO\rest\forex;
+namespace PolygonIO\Tests\Rest;
+
 use PHPUnit\Framework\TestCase;
 
 use GuzzleHttp\Client;
@@ -7,6 +8,15 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Response;
+use PolygonIO\Rest\Forex\Aggregates;
+use PolygonIO\Rest\Forex\Forex;
+use PolygonIO\Rest\Forex\GroupedDaily;
+use PolygonIO\Rest\Forex\HistoricForexTick;
+use PolygonIO\Rest\Forex\LastQuoteForCurrencyPair;
+use PolygonIO\Rest\Forex\PreviousClose;
+use PolygonIO\Rest\Forex\RealTimeCurrencyConversion;
+use PolygonIO\Rest\Forex\SnapshotAllTickers;
+use PolygonIO\Rest\Forex\SnapshotGainersLosers;
 
 class ForexTest extends TestCase {
 

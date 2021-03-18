@@ -1,4 +1,6 @@
 <?php
+namespace PolygonIO\Tests\Rest;
+
 use PHPUnit\Framework\TestCase;
 
 use GuzzleHttp\Client;
@@ -7,18 +9,18 @@ use GuzzleHttp\Middleware;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Response;
 
-use PolygonIO\rest\reference\Reference;
-use PolygonIO\rest\reference\Tickers;
-use PolygonIO\rest\reference\TickerTypes;
-use PolygonIO\rest\reference\TickerDetails;
-use PolygonIO\rest\reference\TickerNews;
-use PolygonIO\rest\reference\Markets;
-use PolygonIO\rest\reference\Locales;
-use PolygonIO\rest\reference\StockSplits;
-use PolygonIO\rest\reference\StockDividends;
-use PolygonIO\rest\reference\StockFinancials;
-use PolygonIO\rest\reference\MarketStatus;
-use PolygonIO\rest\reference\MarketHolidays;
+use PolygonIO\Rest\Reference\Reference;
+use PolygonIO\Rest\Reference\Tickers;
+use PolygonIO\Rest\Reference\TickerTypes;
+use PolygonIO\Rest\Reference\TickerDetails;
+use PolygonIO\Rest\Reference\TickerNews;
+use PolygonIO\Rest\Reference\Markets;
+use PolygonIO\Rest\Reference\Locales;
+use PolygonIO\Rest\Reference\StockSplits;
+use PolygonIO\Rest\Reference\StockDividends;
+use PolygonIO\Rest\Reference\StockFinancials;
+use PolygonIO\Rest\Reference\MarketStatus;
+use PolygonIO\Rest\Reference\MarketHolidays;
 
 class ReferenceTest extends TestCase {
     public function testExportAllTheMethodsFromReferenceApi() {
