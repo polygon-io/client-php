@@ -7,19 +7,32 @@
         {
             "name": "Julien Prugne",
             "email": "julien@webeleon.dev"
+        },
+        {
+            "name": "Ersin Demirtas",
+            "email": "ed5@me.com"
         }
     ],
     "require": {
+        "php":">=7.2",
+        "ext-json": "*",
         "guzzlehttp/guzzle": "^6.4",
         "amphp/websocket-client": "^0.2.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8"
     },
     "autoload": {
         "psr-4": {
             "PolygonIO\\": "src/"
         }
     },
-    "require-dev": {
-        "overtrue/phplint": "^1.1",
-        "phpunit/phpunit": "^8"
+    "autoload-dev": {
+        "psr-4": {
+            "PolygonIO\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit"
     }
 }
