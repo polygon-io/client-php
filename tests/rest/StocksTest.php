@@ -1,4 +1,6 @@
 <?php
+namespace PolygonIO\Tests\Rest;
+
 use PHPUnit\Framework\TestCase;
 
 use GuzzleHttp\Client;
@@ -7,22 +9,22 @@ use GuzzleHttp\Middleware;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Response;
 
-use PolygonIO\rest\stocks\Stocks;
-use PolygonIO\rest\stocks\Exchanges;
-use PolygonIO\rest\stocks\HistoricTrades;
-use PolygonIO\rest\stocks\HistoricTradesV2;
-use PolygonIO\rest\stocks\HistoricQuotes;
-use PolygonIO\rest\stocks\HistoricQuotesV2;
-use PolygonIO\rest\stocks\LastTradeForSymbol;
-use PolygonIO\rest\stocks\LastQuoteForSymbol;
-use PolygonIO\rest\stocks\DailyOpenClose;
-use PolygonIO\rest\stocks\ConditionMappings;
-use PolygonIO\rest\stocks\SnapshotAllTickers;
-use PolygonIO\rest\stocks\SnapshotSingleTicker;
-use PolygonIO\rest\stocks\SnapshotGainersLosers;
-use PolygonIO\rest\stocks\PreviousClose;
-use PolygonIO\rest\stocks\Aggregates;
-use PolygonIO\rest\stocks\GroupedDaily;
+use PolygonIO\Rest\Stocks\Stocks;
+use PolygonIO\Rest\Stocks\Exchanges;
+use PolygonIO\Rest\Stocks\HistoricTrades;
+use PolygonIO\Rest\Stocks\HistoricTradesV2;
+use PolygonIO\Rest\Stocks\HistoricQuotes;
+use PolygonIO\Rest\Stocks\HistoricQuotesV2;
+use PolygonIO\Rest\Stocks\LastTradeForSymbol;
+use PolygonIO\Rest\Stocks\LastQuoteForSymbol;
+use PolygonIO\Rest\Stocks\DailyOpenClose;
+use PolygonIO\Rest\Stocks\ConditionMappings;
+use PolygonIO\Rest\Stocks\SnapshotAllTickers;
+use PolygonIO\Rest\Stocks\SnapshotSingleTicker;
+use PolygonIO\Rest\Stocks\SnapshotGainersLosers;
+use PolygonIO\Rest\Stocks\PreviousClose;
+use PolygonIO\Rest\Stocks\Aggregates;
+use PolygonIO\Rest\Stocks\GroupedDaily;
 
 class StocksTest extends TestCase {
 

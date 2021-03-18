@@ -1,5 +1,6 @@
 <?php
-namespace PolygonIO\rest\crypto;
+namespace PolygonIO\Tests\Rest;
+
 use PHPUnit\Framework\TestCase;
 
 use GuzzleHttp\Client;
@@ -7,6 +8,18 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Response;
+use PolygonIO\Rest\Crypto\Aggregates;
+use PolygonIO\Rest\Crypto\Crypto;
+use PolygonIO\Rest\Crypto\CryptoExchanges;
+use PolygonIO\Rest\Crypto\DailyOpenClose;
+use PolygonIO\Rest\Crypto\GroupedDaily;
+use PolygonIO\Rest\Crypto\HistoricCryptoTrade;
+use PolygonIO\Rest\Crypto\LastTradeForCryptoPair;
+use PolygonIO\Rest\Crypto\PreviousClose;
+use PolygonIO\Rest\Crypto\SnapshotAllTickers;
+use PolygonIO\Rest\Crypto\SnapshotGainersLosers;
+use PolygonIO\Rest\Crypto\SnapshotSingleTicker;
+use PolygonIO\Rest\Crypto\SnapshotSingleTickerFullBook;
 
 class CryptoTest extends TestCase {
 
