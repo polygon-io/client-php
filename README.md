@@ -17,7 +17,7 @@ composer require polygon-io/api
 
 ## [Rest API](https://polygon.io/docs/#getting-started)
 
-The `\PolygonIO\rest\Rest` class export 4 modules:
+The `\PolygonIO\Rest\Rest` class export 4 modules:
 
 - reference
 - stocks
@@ -27,7 +27,7 @@ The `\PolygonIO\rest\Rest` class export 4 modules:
 ```
 <?php
 require __DIR__ . '/vendor/autload.php';
-use PolygonIO\rest\Rest;
+use PolygonIO\Rest\Rest;
 
 $rest = new Rest('your api key')
 
