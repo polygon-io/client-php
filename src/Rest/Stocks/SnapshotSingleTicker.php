@@ -20,7 +20,7 @@ class SnapshotSingleTicker extends RestResource
      */
     public function get($tickerSymbol): array
     {
-        return $this->_get('/v2/snapshot/locale/us/markets/stocks/tickers/'.$tickerSymbol);
+        return $this->_get('/v2/snapshot/locale/us/markets/stocks/tickers/' . $tickerSymbol);
     }
 
     /**

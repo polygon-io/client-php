@@ -1,4 +1,5 @@
 <?php
+
 namespace PolygonIO;
 
 use PolygonIO\Rest\Rest;

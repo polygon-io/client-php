@@ -1,4 +1,5 @@
 <?php
+
 namespace PolygonIO\Rest\Crypto;
 
 use PolygonIO\Rest\Common\Mappers;
@@ -24,7 +25,7 @@ class Aggregates extends RestResource
      */
     public function get($tickerSymbol, $multiplier, $from, $to, $timespan = 'days', $params = [])
     {
-        return $this->_get('/v2/aggs/ticker/'. $tickerSymbol . '/range/' . $multiplier . '/' . $timespan . '/' . $from . '/' . $to, $params);
+        return $this->_get('/v2/aggs/ticker/' . $tickerSymbol . '/range/' . $multiplier . '/' . $timespan . '/' . $from . '/' . $to, $params);
     }
 
     /**

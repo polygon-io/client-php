@@ -1,4 +1,5 @@
 <?php
+
 namespace PolygonIO\Rest;
 
 use PolygonIO\Rest\Crypto\Crypto;

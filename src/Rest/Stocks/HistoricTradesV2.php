@@ -1,4 +1,5 @@
 <?php
+
 namespace PolygonIO\Rest\Stocks;
 
 use PolygonIO\Rest\RestResource;

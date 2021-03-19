@@ -1,4 +1,5 @@
 <?php
+
 namespace PolygonIO\Rest\Reference;
 
 use PolygonIO\Rest\RestResource;

@@ -1,4 +1,5 @@
 <?php
+
 namespace PolygonIO\Rest\Stocks;
 
 use PolygonIO\Rest\Common\Mappers;
@@ -19,7 +20,7 @@ class HistoricQuotes extends RestResource
      */
     public function get($tickerSymbol, $date): array
     {
-        return $this->_get('/v1/historic/quotes/'.$tickerSymbol.'/'.$date);
+        return $this->_get('/v1/historic/quotes/' . $tickerSymbol . '/' . $date);
     }
 
     /**

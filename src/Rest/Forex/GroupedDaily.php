@@ -1,4 +1,5 @@
 <?php
+
 namespace PolygonIO\Rest\Forex;
 
 use PolygonIO\Rest\Common\Mappers;
@@ -22,7 +23,7 @@ class GroupedDaily extends RestResource
      */
     public function get($date, $locale = 'US', $market = 'FX', $params = []): array
     {
-        return $this->_get('/v2/aggs/grouped/locale/'.$locale.'/market/'.$market.'/'.$date, $params);
+        return $this->_get('/v2/aggs/grouped/locale/' . $locale . '/market/' . $market . '/' . $date, $params);
     }
 
     /**

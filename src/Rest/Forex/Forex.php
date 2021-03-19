@@ -1,4 +1,5 @@
 <?php
+
 namespace PolygonIO\Rest\Forex;
 
 class Forex

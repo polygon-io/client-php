@@ -1,4 +1,5 @@
 <?php
+
 namespace PolygonIO\Rest\Reference;
 
 use PolygonIO\Rest\RestResource;
@@ -22,6 +23,6 @@ class TickerNews extends RestResource
      */
     public function get($tickerSymbol, $params = []): array
     {
-        return $this->_get('/v1/meta/symbols/'.$tickerSymbol.'/news', $params);
+        return $this->_get('/v1/meta/symbols/' . $tickerSymbol . '/news', $params);
     }
 }

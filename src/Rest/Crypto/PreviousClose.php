@@ -21,7 +21,7 @@ class PreviousClose extends RestResource
      */
     public function get($tickerSymbol, array $params = []): array
     {
-        return $this->_get('/v2/aggs/ticker/'.$tickerSymbol.'/prev', $params);
+        return $this->_get('/v2/aggs/ticker/' . $tickerSymbol . '/prev', $params);
     }
 
     /**

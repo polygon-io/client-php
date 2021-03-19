@@ -1,4 +1,5 @@
 <?php
+
 namespace PolygonIO\Rest\Reference;
 
 use PolygonIO\Rest\RestResource;
@@ -16,6 +17,6 @@ class StockFinancials extends RestResource
      */
     public function get($tickerSymbol, $params = [])
     {
-        return $this->_get('/v2/reference/financials/'.$tickerSymbol, $params);
+        return $this->_get('/v2/reference/financials/' . $tickerSymbol, $params);
     }
 }

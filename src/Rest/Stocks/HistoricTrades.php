@@ -1,8 +1,10 @@
 <?php
+
 namespace PolygonIO\Rest\Stocks;
 
 use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
+
 use function Amp\Iterator\map;
 
 class HistoricTrades extends RestResource
@@ -19,7 +21,7 @@ class HistoricTrades extends RestResource
      */
     public function get($tickerSymbol, $date): array
     {
-        return $this->_get('/v1/historic/trades/'.$tickerSymbol.'/'.$date);
+        return $this->_get('/v1/historic/trades/' . $tickerSymbol . '/' . $date);
     }
 
     /**

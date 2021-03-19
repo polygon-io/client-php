@@ -1,4 +1,5 @@
 <?php
+
 namespace PolygonIO\Rest\Forex;
 
 use PolygonIO\Rest\RestResource;
@@ -11,6 +12,6 @@ class HistoricForexTick extends RestResource
 
     public function get($from, $to, $date, $params = [])
     {
-        return $this->_get('/v1/historic/forex/'.$from.'/'.$to.'/'.$date, $params);
+        return $this->_get('/v1/historic/forex/' . $from . '/' . $to . '/' . $date, $params);
     }
 }

@@ -20,7 +20,7 @@ class SnapshotGainersLosers extends RestResource
      */
     public function get($direction = 'gainers'): array
     {
-        return $this->_get('/v2/snapshot/locale/us/markets/stocks/'.$direction);
+        return $this->_get('/v2/snapshot/locale/us/markets/stocks/' . $direction);
     }
 
     /**

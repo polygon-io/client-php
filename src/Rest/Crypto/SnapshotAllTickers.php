@@ -1,4 +1,5 @@
 <?php
+
 namespace PolygonIO\Rest\Crypto;
 
 use PolygonIO\Rest\Common\Mappers;

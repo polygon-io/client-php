@@ -27,7 +27,7 @@ class HistoricCryptoTrade extends RestResource
      */
     public function get($from, $to, $date, $params = []): array
     {
-        return $this->_get('/v1/historic/crypto/'.$from.'/'.$to.'/'.$date, $params);
+        return $this->_get('/v1/historic/crypto/' . $from . '/' . $to . '/' . $date, $params);
     }
 
     /**

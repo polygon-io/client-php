@@ -2,7 +2,7 @@
 
 namespace PolygonIO\Websockets;
 
-use \Amp\Websocket;
+use Amp\Websocket;
 
 class WebsocketResource
 {
@@ -12,7 +12,7 @@ class WebsocketResource
     public function __construct($topic, $apiKey)
     {
         $this->apiKey = $apiKey;
-        $this->SOCKET_URI = 'wss://socket.polygon.io:443/'.$topic;
+        $this->SOCKET_URI = 'wss://socket.polygon.io:443/' . $topic;
     }
 
     public function connect($subscriptions, $onMessageCallback)
@@ -20,7 +20,7 @@ class WebsocketResource
         \Amp\Loop::run(function () use ($onMessageCallback, $subscriptions) {
             /** @var Websocket\Connection $connection */
             $connection = yield Websocket\connect($this->SOCKET_URI);
-            yield $connection->send('{"action":"auth", "params":"'.$this->apiKey.'"}');
+            yield $connection->send('{"action":"auth", "params":"' . $this->apiKey . '"}');
             yield $connection->send(json_encode([
                 "action" => "subscribe",
                 "params" => $subscriptions,

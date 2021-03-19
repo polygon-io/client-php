@@ -1,4 +1,5 @@
 <?php
+
 namespace PolygonIO\Rest\Forex;
 
 use PolygonIO\Rest\Common\Mappers;
@@ -19,7 +20,7 @@ class SnapshotGainersLosers extends RestResource
      */
     public function get($direction = 'gainers'): array
     {
-        return $this->_get('/v2/snapshot/locale/global/markets/forex/'.$direction);
+        return $this->_get('/v2/snapshot/locale/global/markets/forex/' . $direction);
     }
 
     /**

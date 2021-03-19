@@ -1,4 +1,5 @@
 <?php
+
 namespace PolygonIO\Websockets;
 
 class Websockets

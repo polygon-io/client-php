@@ -1,4 +1,5 @@
 <?php
+
 namespace PolygonIO\Rest;
 
 /**
@@ -36,7 +37,7 @@ abstract class RestResource
             )
         );
 
-        $route = $this->API_URL.$route;
+        $route = $this->API_URL . $route;
         $response = $this->httpClient->get($route, [
             'query' => $enhancedParams
         ]);

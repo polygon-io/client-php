@@ -1,4 +1,5 @@
 <?php
+
 namespace PolygonIO\Rest\Crypto;
 
 use PolygonIO\Rest\Common\Mappers;
@@ -14,7 +15,7 @@ class SnapshotSingleTickerFullBook extends RestResource
      */
     public function get($tickerSymbol): array
     {
-        return $this->_get('/v2/snapshot/locale/global/markets/crypto/tickers/'.$tickerSymbol.'/book');
+        return $this->_get('/v2/snapshot/locale/global/markets/crypto/tickers/' . $tickerSymbol . '/book');
     }
 
     /**

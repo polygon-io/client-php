@@ -22,7 +22,7 @@ class DailyOpenClose extends RestResource
      */
     public function get($from, $to, $date): array
     {
-        return $this->_get('/v1/open-close/crypto/'.$from.'/'.$to.'/'.$date);
+        return $this->_get('/v1/open-close/crypto/' . $from . '/' . $to . '/' . $date);
     }
 
     /**
