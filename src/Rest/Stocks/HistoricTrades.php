@@ -5,8 +5,8 @@ use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
 use function Amp\Iterator\map;
 
-class HistoricTrades extends RestResource {
-
+class HistoricTrades extends RestResource
+{
     protected $defaultParams = [
         'limit' => 100
     ];

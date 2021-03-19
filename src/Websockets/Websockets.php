@@ -1,7 +1,8 @@
 <?php
 namespace PolygonIO\Websockets;
 
-class Websockets {
+class Websockets
+{
     public $stocks;
     public $crypto;
     public $forex;

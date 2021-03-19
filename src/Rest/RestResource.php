@@ -5,7 +5,8 @@ namespace PolygonIO\Rest;
  * Class RestResource
  * @package PolygonIO\rest
  */
-abstract class RestResource {
+abstract class RestResource
+{
     protected $defaultParams = [];
     protected $route;
 
@@ -53,6 +54,6 @@ abstract class RestResource {
      */
     protected function mapper(array $response): array
     {
-       return $response;
+        return $response;
     }
 }

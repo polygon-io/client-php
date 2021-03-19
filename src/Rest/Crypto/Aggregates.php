@@ -9,7 +9,8 @@ use PolygonIO\Rest\RestResource;
  *
  * @package PolygonIO\Rest\Crypto
  */
-class Aggregates extends RestResource {
+class Aggregates extends RestResource
+{
 
     /**
      * @param $tickerSymbol

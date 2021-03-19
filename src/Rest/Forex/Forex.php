@@ -1,7 +1,8 @@
 <?php
 namespace PolygonIO\Rest\Forex;
 
-class Forex {
+class Forex
+{
     public $aggregates;
     public $groupedDaily;
     public $previousClose;

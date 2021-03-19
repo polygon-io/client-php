@@ -9,7 +9,8 @@ use PolygonIO\Rest\RestResource;
  *
  * @package PolygonIO\Rest\Crypto
  */
-class SnapshotAllTickers extends RestResource {
+class SnapshotAllTickers extends RestResource
+{
 
     /**
      * @return array

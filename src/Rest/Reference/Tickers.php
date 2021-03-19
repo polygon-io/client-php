@@ -7,7 +7,8 @@ use PolygonIO\Rest\RestResource;
  * Class Tickers
  * @package PolygonIO\rest\reference
  */
-class Tickers extends RestResource {
+class Tickers extends RestResource
+{
     public $route = '/v2/reference/tickers';
     protected $defaultParams = [
         'sort' => 'ticker',
@@ -19,7 +20,8 @@ class Tickers extends RestResource {
      * @param $params
      * @return mixed
      */
-    public function get($params = []) {
+    public function get($params = [])
+    {
         return $this->_get($this->route, $params);
     }
 }

@@ -3,7 +3,8 @@ namespace PolygonIO\Rest\Reference;
 
 use PolygonIO\Rest\RestResource;
 
-class StockFinancials extends RestResource {
+class StockFinancials extends RestResource
+{
     protected $defaultParams = [
        'limit' => 5,
     ];
@@ -13,7 +14,8 @@ class StockFinancials extends RestResource {
      * @param $params
      * @return mixed
      */
-    public function get($tickerSymbol, $params = []) {
+    public function get($tickerSymbol, $params = [])
+    {
         return $this->_get('/v2/reference/financials/'.$tickerSymbol, $params);
     }
 }

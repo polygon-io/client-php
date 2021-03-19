@@ -10,7 +10,8 @@ use PolygonIO\Rest\RestResource;
  *
  * @package PolygonIO\Rest\Crypto
  */
-class PreviousClose extends RestResource {
+class PreviousClose extends RestResource
+{
 
     /**
      * @param $tickerSymbol

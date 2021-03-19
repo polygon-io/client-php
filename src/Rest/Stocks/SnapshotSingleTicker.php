@@ -10,7 +10,8 @@ use PolygonIO\Rest\RestResource;
  *
  * @package PolygonIO\Rest\Stocks
  */
-class SnapshotSingleTicker extends RestResource {
+class SnapshotSingleTicker extends RestResource
+{
 
     /**
      * @param $tickerSymbol

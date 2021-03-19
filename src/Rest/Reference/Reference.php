@@ -5,7 +5,8 @@ namespace PolygonIO\Rest\Reference;
  * Class Reference
  * @package PolygonIO\rest\reference
  */
-class Reference {
+class Reference
+{
     public $tickers;
     public $tickerTypes;
     public $tickerDetails;

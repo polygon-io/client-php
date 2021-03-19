@@ -10,7 +10,8 @@ use PolygonIO\Rest\RestResource;
  *
  * @package PolygonIO\Rest\Crypto
  */
-class DailyOpenClose extends RestResource {
+class DailyOpenClose extends RestResource
+{
 
     /**
      * @param $from

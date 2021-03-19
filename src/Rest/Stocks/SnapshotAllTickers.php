@@ -10,12 +10,14 @@ use PolygonIO\Rest\RestResource;
  *
  * @package PolygonIO\Rest\Stocks
  */
-class SnapshotAllTickers extends RestResource {
+class SnapshotAllTickers extends RestResource
+{
 
     /**
      * @return array
      */
-    public function get(): array {
+    public function get(): array
+    {
         return $this->_get('/v2/snapshot/locale/us/markets/stocks/tickers');
     }
 

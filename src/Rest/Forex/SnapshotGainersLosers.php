@@ -9,7 +9,8 @@ use PolygonIO\Rest\RestResource;
  *
  * @package PolygonIO\Rest\Forex
  */
-class SnapshotGainersLosers extends RestResource {
+class SnapshotGainersLosers extends RestResource
+{
 
     /**
      * @param  string  $direction

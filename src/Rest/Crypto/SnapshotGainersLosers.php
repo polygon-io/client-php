@@ -10,7 +10,8 @@ use PolygonIO\Rest\RestResource;
  *
  * @package PolygonIO\Rest\Crypto
  */
-class SnapshotGainersLosers extends RestResource {
+class SnapshotGainersLosers extends RestResource
+{
 
     /**
      * @param  string  $direction

@@ -7,10 +7,12 @@ use PolygonIO\Rest\RestResource;
  * Class Markets
  * @package PolygonIO\rest\reference
  */
-class Markets extends RestResource {
+class Markets extends RestResource
+{
     protected $route = '/v2/reference/markets';
 
-    public function get() {
+    public function get()
+    {
         return $this->_get($this->route);
     }
 }

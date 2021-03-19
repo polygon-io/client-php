@@ -4,7 +4,8 @@ namespace PolygonIO\Rest\Forex;
 use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
 
-class Aggregates extends RestResource {
+class Aggregates extends RestResource
+{
 
     /**
      * @param $tickerSymbol

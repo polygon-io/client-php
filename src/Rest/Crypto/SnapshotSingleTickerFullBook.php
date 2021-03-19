@@ -4,7 +4,8 @@ namespace PolygonIO\Rest\Crypto;
 use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
 
-class SnapshotSingleTickerFullBook extends RestResource {
+class SnapshotSingleTickerFullBook extends RestResource
+{
 
     /**
      * @param $tickerSymbol
@@ -23,13 +24,13 @@ class SnapshotSingleTickerFullBook extends RestResource {
      */
     protected function mapper(array $response): array
     {
-        if(array_key_exists('asks', $response['data'])) {
-            $response['data']['asks'] = array_merge(function($ask) {
+        if (array_key_exists('asks', $response['data'])) {
+            $response['data']['asks'] = array_merge(function ($ask) {
                 return Mappers::cryptoSnapshotBookItem($ask);
             }, $response['data']['asks']);
         }
         if (array_key_exists('bids', $response['data'])) {
-            $response['data']['bids'] = array_merge(function($bid) {
+            $response['data']['bids'] = array_merge(function ($bid) {
                 return Mappers::cryptoSnapshotBookItem($bid);
             }, $response['data']['bids']);
         }

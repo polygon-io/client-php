@@ -7,7 +7,8 @@ use PolygonIO\Rest\RestResource;
  * Class TickerNews
  * @package PolygonIO\rest\reference
  */
-class TickerNews extends RestResource {
+class TickerNews extends RestResource
+{
     protected $defaultParams = [
         'perPage' => 50,
         'page' => 1,
@@ -15,10 +16,12 @@ class TickerNews extends RestResource {
 
     /**
      * @param $tickerSymbol
-     * @param $params
-     * @return mixed
+     * @param  array  $params
+     *
+     * @return array
      */
-    public function get($tickerSymbol, $params = []) {
+    public function get($tickerSymbol, $params = []): array
+    {
         return $this->_get('/v1/meta/symbols/'.$tickerSymbol.'/news', $params);
     }
 }

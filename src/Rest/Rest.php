@@ -6,7 +6,8 @@ use PolygonIO\Rest\Forex\Forex;
 use PolygonIO\Rest\Reference\Reference;
 use PolygonIO\Rest\Stocks\Stocks;
 
-class Rest {
+class Rest
+{
     public $reference;
     public $stocks;
     public $forex;

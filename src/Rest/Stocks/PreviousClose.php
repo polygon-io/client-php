@@ -4,7 +4,8 @@ namespace PolygonIO\Rest\Stocks;
 use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
 
-class PreviousClose extends RestResource {
+class PreviousClose extends RestResource
+{
 
     /**
      * @param $tickerSymbol

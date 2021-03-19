@@ -7,7 +7,8 @@ namespace PolygonIO\Rest\Common;
  *
  * @package PolygonIO\Rest\Common
  */
-class Mappers {
+class Mappers
+{
 
     /**
      * @param $mapFields
@@ -29,7 +30,7 @@ class Mappers {
      *
      * @return array
      */
-    public static function quoteV1 (array $tick): array
+    public static function quoteV1(array $tick): array
     {
         $mapperFields = [
             'condition' => 'c',
@@ -50,7 +51,7 @@ class Mappers {
      *
      * @return array
      */
-    public static function snapshotQuote (array $q): array
+    public static function snapshotQuote(array $q): array
     {
         $mapperFields = [
             'bidPrice' => 'p',
@@ -68,7 +69,7 @@ class Mappers {
      *
      * @return array
      */
-    public static function tradeV1 (array $tick): array
+    public static function tradeV1(array $tick): array
     {
         $mapperFields = [
             'condition1' => 'c1',
@@ -89,7 +90,7 @@ class Mappers {
      *
      * @return array
      */
-    public static function snapshotAgg (array $snap): array
+    public static function snapshotAgg(array $snap): array
     {
         $mapperFields = [
             'close' => 'c',
@@ -107,7 +108,8 @@ class Mappers {
      *
      * @return array|mixed
      */
-    public static function snapshotAggV2 (array $snap) {
+    public static function snapshotAggV2(array $snap)
+    {
         $mapperFields = [
             'tickerSymbol' => 'T',
             'volume' => 'v',
@@ -145,7 +147,7 @@ class Mappers {
      *
      * @return array
      */
-    public static function cryptoSnapshotBookItem (array $item): array
+    public static function cryptoSnapshotBookItem(array $item): array
     {
         $mapperFields = [
             'price' => 'p',
@@ -159,7 +161,7 @@ class Mappers {
      *
      * @return array
      */
-    public static function snapshotTicker (array $snap): array
+    public static function snapshotTicker(array $snap): array
     {
         $snap['day'] = Mappers::snapshotAgg($snap['day']);
         $snap['lastTrade'] = Mappers::tradeV1($snap['lastTrade']);
@@ -175,7 +177,7 @@ class Mappers {
      *
      * @return array
      */
-    public static function snapshotCryptoTicker (array $snap): array
+    public static function snapshotCryptoTicker(array $snap): array
     {
         $snap['day'] = Mappers::snapshotAgg($snap['day']);
         $snap['lastTrade'] = Mappers::cryptoTick($snap['lastTrade']);

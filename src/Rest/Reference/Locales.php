@@ -7,10 +7,12 @@ use PolygonIO\Rest\RestResource;
  * Class Locales
  * @package PolygonIO\rest\reference
  */
-class Locales extends RestResource {
+class Locales extends RestResource
+{
     protected $route = '/v2/reference/locales';
 
-    public function get() {
+    public function get()
+    {
         return $this->_get($this->route);
     }
 }

@@ -9,7 +9,8 @@ use PolygonIO\Rest\RestResource;
  *
  * @package PolygonIO\Rest\Forex
  */
-class GroupedDaily extends RestResource {
+class GroupedDaily extends RestResource
+{
 
     /**
      * @param $date

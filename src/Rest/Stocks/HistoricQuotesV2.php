@@ -4,7 +4,8 @@ namespace PolygonIO\Rest\Stocks;
 use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
 
-class HistoricQuotesV2 extends RestResource {
+class HistoricQuotesV2 extends RestResource
+{
     protected $defaultParams = [
         'limit' => 100
     ];

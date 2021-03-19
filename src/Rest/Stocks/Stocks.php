@@ -1,7 +1,6 @@
 <?php
 namespace PolygonIO\Rest\Stocks;
 
-
 class Stocks
 {
     public $exchanges;

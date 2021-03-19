@@ -8,7 +8,8 @@ use PolygonIO\Rest\RestResource;
  * Class TickerDetails
  * @package PolygonIO\rest\reference
  */
-class TickerDetails extends RestResource {
+class TickerDetails extends RestResource
+{
 
     /**
      * @param $tickerSymbol string

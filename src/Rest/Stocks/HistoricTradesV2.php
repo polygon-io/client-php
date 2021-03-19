@@ -3,7 +3,8 @@ namespace PolygonIO\Rest\Stocks;
 
 use PolygonIO\Rest\RestResource;
 
-class HistoricTradesV2 extends RestResource {
+class HistoricTradesV2 extends RestResource
+{
 
     protected $defaultParams = [
         'limit' => 100

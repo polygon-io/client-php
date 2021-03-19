@@ -10,7 +10,8 @@ use PolygonIO\Rest\RestResource;
  *
  * @package PolygonIO\Rest\Crypto
  */
-class GroupedDaily extends RestResource {
+class GroupedDaily extends RestResource
+{
 
     /**
      * @param $date

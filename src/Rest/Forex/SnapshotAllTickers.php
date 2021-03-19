@@ -10,7 +10,8 @@ use PolygonIO\Rest\RestResource;
  *
  * @package PolygonIO\Rest\Forex
  */
-class SnapshotAllTickers extends RestResource {
+class SnapshotAllTickers extends RestResource
+{
 
     /**
      * @return array

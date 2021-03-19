@@ -2,9 +2,10 @@
 namespace PolygonIO;
 
 use PolygonIO\Rest\Rest;
-use PolygonIO\websockets\Websockets;
+use PolygonIO\Websockets\Websockets;
 
-class PolygonIO {
+class PolygonIO
+{
     public $api_key;
     public $rest;
     public $websockets;
