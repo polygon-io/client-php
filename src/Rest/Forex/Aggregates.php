@@ -13,8 +13,8 @@ class Aggregates extends RestResource
      * @param $multiplier
      * @param $from
      * @param $to
-     * @param  string  $timespan
-     * @param  array  $params
+     * @param string $timespan
+     * @param array  $params
      *
      * @return array
      */
@@ -24,15 +24,17 @@ class Aggregates extends RestResource
     }
 
     /**
-     * @param  array  $response
+     * @param array $response
      *
      * @return array
      */
     protected function mapper(array $response): array
     {
-        $response['results'] = array_map(function ($result) {
-            return Mappers::snapshotAggV2($result);
-        }, $response['results']);
+        $response['results'] = array_map(
+            function ($result) {
+                return Mappers::snapshotAggV2($result);
+            }, $response['results']
+        );
 
         return $response;
     }

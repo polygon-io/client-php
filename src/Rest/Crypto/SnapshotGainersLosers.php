@@ -14,7 +14,7 @@ class SnapshotGainersLosers extends RestResource
 {
 
     /**
-     * @param  string  $direction
+     * @param string $direction
      *
      * @return array
      */
@@ -24,15 +24,17 @@ class SnapshotGainersLosers extends RestResource
     }
 
     /**
-     * @param  array  $response
+     * @param array $response
      *
      * @return array
      */
     protected function mapper(array $response): array
     {
-        $response['tickers'] = array_map(function ($ticker) {
-            return Mappers::snapshotTicker($ticker);
-        }, $response['tickers']);
+        $response['tickers'] = array_map(
+            function ($ticker) {
+                return Mappers::snapshotTicker($ticker);
+            }, $response['tickers']
+        );
 
         return $response;
     }

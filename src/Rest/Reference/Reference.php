@@ -4,6 +4,7 @@ namespace PolygonIO\Rest\Reference;
 
 /**
  * Class Reference
+ *
  * @package PolygonIO\rest\reference
  */
 class Reference
@@ -22,6 +23,7 @@ class Reference
 
     /**
      * Reference constructor.
+     *
      * @param $apiKey
      */
     public function __construct($apiKey)

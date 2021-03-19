@@ -23,7 +23,7 @@ class HistoricQuotesV2 extends RestResource
     }
 
     /**
-     * @param  array  $response
+     * @param array $response
      *
      * @return array
      */
@@ -47,11 +47,13 @@ class HistoricQuotesV2 extends RestResource
         ];
 
         if ($response['results']) {
-            $response['results'] = array_map(function ($result) use (
-                $mapperFields
-            ) {
-                return Mappers::map($mapperFields, $result);
-            }, $response['results']);
+            $response['results'] = array_map(
+                function ($result) use (
+                    $mapperFields
+                ) {
+                    return Mappers::map($mapperFields, $result);
+                }, $response['results']
+            );
         }
 
         return $response;

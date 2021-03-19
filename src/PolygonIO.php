@@ -13,6 +13,7 @@ class PolygonIO
 
     /**
      * Polygon constructor.
+     *
      * @param $apiKey
      */
     public function __construct($apiKey)

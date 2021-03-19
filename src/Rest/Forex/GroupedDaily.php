@@ -15,9 +15,9 @@ class GroupedDaily extends RestResource
 
     /**
      * @param $date
-     * @param  string  $locale
-     * @param  string  $market
-     * @param  array  $params
+     * @param string $locale
+     * @param string $market
+     * @param array  $params
      *
      * @return array
      */
@@ -27,15 +27,17 @@ class GroupedDaily extends RestResource
     }
 
     /**
-     * @param  array  $response
+     * @param array $response
      *
      * @return array
      */
     protected function mapper(array $response): array
     {
-        $response['results'] = array_map(function ($result) {
-            return Mappers::snapshotAggV2($result);
-        }, $response['results']);
+        $response['results'] = array_map(
+            function ($result) {
+                return Mappers::snapshotAggV2($result);
+            }, $response['results']
+        );
 
         return $response;
     }

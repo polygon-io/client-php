@@ -6,6 +6,7 @@ use PolygonIO\Rest\RestResource;
 
 /**
  * Class Markets
+ *
  * @package PolygonIO\rest\reference
  */
 class Markets extends RestResource

@@ -6,6 +6,7 @@ use PolygonIO\Rest\RestResource;
 
 /**
  * Class TickerNews
+ *
  * @package PolygonIO\rest\reference
  */
 class TickerNews extends RestResource
@@ -17,7 +18,7 @@ class TickerNews extends RestResource
 
     /**
      * @param $tickerSymbol
-     * @param  array  $params
+     * @param array $params
      *
      * @return array
      */

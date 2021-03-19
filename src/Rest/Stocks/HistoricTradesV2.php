@@ -23,7 +23,7 @@ class HistoricTradesV2 extends RestResource
     }
 
     /**
-     * @param  array  $response
+     * @param array $response
      *
      * @return array
      */
@@ -43,10 +43,12 @@ class HistoricTradesV2 extends RestResource
             'z' => 'tapeWhereTheTradeOccured',
         ];
 
-        $response['ticks'] = array_map(function ($tick) {
+        $response['ticks'] = array_map(
+            function ($tick) {
 
-            return $tick;
-        }, $response['ticks']);
+                return $tick;
+            }, $response['ticks']
+        );
 
         return $response;
     }

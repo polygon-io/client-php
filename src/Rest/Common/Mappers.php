@@ -26,7 +26,7 @@ class Mappers
     }
 
     /**
-     * @param  array  $tick
+     * @param array $tick
      *
      * @return array
      */
@@ -47,7 +47,7 @@ class Mappers
     }
 
     /**
-     * @param  array  $q
+     * @param array $q
      *
      * @return array
      */
@@ -65,7 +65,7 @@ class Mappers
     }
 
     /**
-     * @param  array  $tick
+     * @param array $tick
      *
      * @return array
      */
@@ -86,7 +86,7 @@ class Mappers
     }
 
     /**
-     * @param  array  $snap
+     * @param array $snap
      *
      * @return array
      */
@@ -104,7 +104,7 @@ class Mappers
     }
 
     /**
-     * @param  array  $snap
+     * @param array $snap
      *
      * @return array|mixed
      */
@@ -125,7 +125,7 @@ class Mappers
     }
 
     /**
-     * @param  array  $tick
+     * @param array $tick
      *
      * @return array
      */
@@ -143,7 +143,7 @@ class Mappers
     }
 
     /**
-     * @param  array  $item
+     * @param array $item
      *
      * @return array
      */
@@ -157,7 +157,7 @@ class Mappers
     }
 
     /**
-     * @param  array  $snap
+     * @param array $snap
      *
      * @return array
      */
@@ -173,7 +173,7 @@ class Mappers
     }
 
     /**
-     * @param  array  $snap
+     * @param array $snap
      *
      * @return array
      */

@@ -6,12 +6,13 @@ use PolygonIO\Rest\RestResource;
 
 /**
  * Class StockSplits
+ *
  * @package PolygonIO\rest\reference
  */
 class StockSplits extends RestResource
 {
     /**
-     * @param string $tickerSymbol
+     * @param  string $tickerSymbol
      * @return mixed
      */
     public function get($tickerSymbol)

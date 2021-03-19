@@ -6,6 +6,7 @@ use PolygonIO\Rest\RestResource;
 
 /**
  * Class Tickers
+ *
  * @package PolygonIO\rest\reference
  */
 class Tickers extends RestResource
@@ -18,7 +19,7 @@ class Tickers extends RestResource
     ];
 
     /**
-     * @param $params
+     * @param  $params
      * @return mixed
      */
     public function get($params = [])

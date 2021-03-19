@@ -10,7 +10,7 @@ class PreviousClose extends RestResource
 
     /**
      * @param $tickerSymbol
-     * @param  array  $params
+     * @param array $params
      *
      * @return array
      */
@@ -20,15 +20,17 @@ class PreviousClose extends RestResource
     }
 
     /**
-     * @param  array  $response
+     * @param array $response
      *
      * @return array
      */
     protected function mapper(array $response): array
     {
-        $response['results'] = array_map(function ($result) {
-            return Mappers::snapshotAggV2($result);
-        }, $response['results']);
+        $response['results'] = array_map(
+            function ($result) {
+                return Mappers::snapshotAggV2($result);
+            }, $response['results']
+        );
 
         return $response;
     }

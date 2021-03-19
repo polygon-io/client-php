@@ -19,21 +19,25 @@ class SnapshotSingleTickerFullBook extends RestResource
     }
 
     /**
-     * @param  array  $response
+     * @param array $response
      *
      * @return array
      */
     protected function mapper(array $response): array
     {
         if (array_key_exists('asks', $response['data'])) {
-            $response['data']['asks'] = array_merge(function ($ask) {
-                return Mappers::cryptoSnapshotBookItem($ask);
-            }, $response['data']['asks']);
+            $response['data']['asks'] = array_merge(
+                function ($ask) {
+                    return Mappers::cryptoSnapshotBookItem($ask);
+                }, $response['data']['asks']
+            );
         }
         if (array_key_exists('bids', $response['data'])) {
-            $response['data']['bids'] = array_merge(function ($bid) {
-                return Mappers::cryptoSnapshotBookItem($bid);
-            }, $response['data']['bids']);
+            $response['data']['bids'] = array_merge(
+                function ($bid) {
+                    return Mappers::cryptoSnapshotBookItem($bid);
+                }, $response['data']['bids']
+            );
         }
 
         return $response;

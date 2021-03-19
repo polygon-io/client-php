@@ -26,7 +26,7 @@ class DailyOpenClose extends RestResource
     }
 
     /**
-     * @param  array  $response
+     * @param array $response
      *
      * @return array
      */

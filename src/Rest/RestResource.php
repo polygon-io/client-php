@@ -4,6 +4,7 @@ namespace PolygonIO\Rest;
 
 /**
  * Class RestResource
+ *
  * @package PolygonIO\rest
  */
 abstract class RestResource
@@ -17,6 +18,7 @@ abstract class RestResource
 
     /**
      * Polygon constructor.
+     *
      * @param $apiKey
      */
     public function __construct($apiKey)
@@ -38,9 +40,11 @@ abstract class RestResource
         );
 
         $route = $this->API_URL . $route;
-        $response = $this->httpClient->get($route, [
+        $response = $this->httpClient->get(
+            $route, [
             'query' => $enhancedParams
-        ]);
+            ]
+        );
 
         $bodyString = $response->getBody()->getContents();
         $json = json_decode($bodyString, true);
@@ -49,7 +53,7 @@ abstract class RestResource
     }
 
     /**
-     * @param  array  $response
+     * @param array $response
      *
      * @return array
      */

@@ -6,6 +6,7 @@ use PolygonIO\Rest\RestResource;
 
 /**
  * Class Locales
+ *
  * @package PolygonIO\rest\reference
  */
 class Locales extends RestResource

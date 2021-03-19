@@ -15,6 +15,7 @@ class Rest
     public $crypto;
     /**
      * Rest constructor.
+     *
      * @param $apiKey
      */
     public function __construct($apiKey)

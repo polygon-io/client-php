@@ -6,6 +6,7 @@ use PolygonIO\Rest\RestResource;
 
 /**
  * Class TickerTypes
+ *
  * @package PolygonIO\Rest\Reference
  */
 class TickerTypes extends RestResource

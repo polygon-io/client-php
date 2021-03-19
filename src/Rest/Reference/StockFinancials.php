@@ -11,8 +11,8 @@ class StockFinancials extends RestResource
     ];
 
     /**
-     * @param $tickerSymbol
-     * @param $params
+     * @param  $tickerSymbol
+     * @param  $params
      * @return mixed
      */
     public function get($tickerSymbol, $params = [])

@@ -21,7 +21,7 @@ class HistoricCryptoTrade extends RestResource
      * @param $from
      * @param $to
      * @param $date
-     * @param  array  $params
+     * @param array $params
      *
      * @return array
      */
@@ -31,15 +31,17 @@ class HistoricCryptoTrade extends RestResource
     }
 
     /**
-     * @param  array  $response
+     * @param array $response
      *
      * @return array
      */
     protected function mapper(array $response): array
     {
-        $response['ticks'] = array_map(function ($tick) {
-            return Mappers::cryptoTick($tick);
-        }, $response['ticks']);
+        $response['ticks'] = array_map(
+            function ($tick) {
+                return Mappers::cryptoTick($tick);
+            }, $response['ticks']
+        );
         return $response;
     }
 }
