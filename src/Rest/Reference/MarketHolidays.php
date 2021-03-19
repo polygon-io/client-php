@@ -7,13 +7,16 @@ use PolygonIO\Rest\RestResource;
 /**
  * Class MarketHolidays
  *
- * @package PolygonIO\rest\reference
+ * @package PolygonIO\Rest\Reference
  */
 class MarketHolidays extends RestResource
 {
-    protected $route = 'GET	/v1/marketstatus/upcoming';
+    protected $route = '/v1/marketstatus/upcoming';
 
-    public function get()
+    /**
+     * @return array
+     */
+    public function get(): array
     {
         return $this->_get($this->route);
     }
