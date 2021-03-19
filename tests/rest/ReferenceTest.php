@@ -1,14 +1,13 @@
 <?php
+
 namespace PolygonIO\Tests\Rest;
 
 use PHPUnit\Framework\TestCase;
-
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Response;
-
 use PolygonIO\Rest\Reference\Reference;
 use PolygonIO\Rest\Reference\Tickers;
 use PolygonIO\Rest\Reference\TickerTypes;
@@ -22,8 +21,10 @@ use PolygonIO\Rest\Reference\StockFinancials;
 use PolygonIO\Rest\Reference\MarketStatus;
 use PolygonIO\Rest\Reference\MarketHolidays;
 
-class ReferenceTest extends TestCase {
-    public function testExportAllTheMethodsFromReferenceApi() {
+class ReferenceTest extends TestCase
+{
+    public function testExportAllTheMethodsFromReferenceApi()
+    {
         $reference = new Reference('fake-api-key');
         $this->assertInstanceOf(Tickers::class, $reference->tickers);
         $this->assertInstanceOf(TickerTypes::class, $reference->tickerTypes);
@@ -38,7 +39,8 @@ class ReferenceTest extends TestCase {
         $this->assertInstanceOf(MarketHolidays::class, $reference->marketHolidays);
     }
 
-    public function testTickersGetCall() {
+    public function testTickersGetCall()
+    {
         $requestsContainer = [];
 
         $tickers = new Tickers('fake-api-key');
@@ -49,7 +51,8 @@ class ReferenceTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/reference/tickers');
     }
 
-    public function testTickerTypesGetCall() {
+    public function testTickerTypesGetCall()
+    {
         $requestsContainer = [];
 
         $tickerTypes = new TickerTypes('fake-api-key');
@@ -60,7 +63,8 @@ class ReferenceTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/reference/types');
     }
 
-    public function testTickerDetailsGetCall() {
+    public function testTickerDetailsGetCall()
+    {
         $requestsContainer = [];
         $response = [
             'lei' => 'lei_remapped',
@@ -76,7 +80,8 @@ class ReferenceTest extends TestCase {
         $this->assertEquals('sic_remapped', $apiResponse['standardIndustryClassification']);
     }
 
-    public function testTickerNewsGetCall() {
+    public function testTickerNewsGetCall()
+    {
         $requestsContainer = [];
         $tickerNews = new TickerNews('fake-api-key');
         $tickerNews->httpClient = $this->getHttpMock($requestsContainer);
@@ -86,7 +91,8 @@ class ReferenceTest extends TestCase {
         $this->assertPath($requestsContainer, '/v1/meta/symbols/AAPL/news');
     }
 
-    public function testMarketsGetCall() {
+    public function testMarketsGetCall()
+    {
         $requestsContainer = [];
 
         $markets = new Markets('fake-api-key');
@@ -97,7 +103,8 @@ class ReferenceTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/reference/markets');
     }
 
-    public function testLocalesGetCall() {
+    public function testLocalesGetCall()
+    {
         $requestsContainer = [];
 
         $locales = new Locales('fake-api-key');
@@ -108,7 +115,8 @@ class ReferenceTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/reference/locales');
     }
 
-     public function testStockSplitsCall() {
+    public function testStockSplitsCall()
+    {
         $requestsContainer = [];
 
         $stockSplits = new StockSplits('fake-api-key');
@@ -119,7 +127,8 @@ class ReferenceTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/reference/splits/AAPL');
     }
 
-    public function testStockDividendsCall() {
+    public function testStockDividendsCall()
+    {
         $requestsContainer = [];
 
         $stockDividends = new StockDividends('fake-api-key');
@@ -130,7 +139,8 @@ class ReferenceTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/reference/dividends/AAPL');
     }
 
-    public function testStockFinancialsCall() {
+    public function testStockFinancialsCall()
+    {
         $requestsContainer = [];
 
         $stockFinancials = new StockFinancials('fake-api-key');
@@ -141,7 +151,8 @@ class ReferenceTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/reference/financials/AAPL');
     }
 
-    public function testMarketStatusGetCall() {
+    public function testMarketStatusGetCall()
+    {
         $requestsContainer = [];
 
         $marketStatus = new MarketStatus('fake-api-key');
@@ -152,7 +163,8 @@ class ReferenceTest extends TestCase {
         $this->assertPath($requestsContainer, '/v1/marketstatus/now');
     }
 
-    public function testMarketHolidaysGetCall() {
+    public function testMarketHolidaysGetCall()
+    {
         $requestsContainer = [];
 
         $marketHolidays = new MarketHolidays('fake-api-key');
@@ -163,11 +175,14 @@ class ReferenceTest extends TestCase {
         $this->assertPath($requestsContainer, '/v1/marketstatus/upcoming');
     }
 
-    private function getHttpMock(&$requestsContainer, $response=[]) {
+    private function getHttpMock(&$requestsContainer, $response = [])
+    {
 
-        $mock = new MockHandler([
+        $mock = new MockHandler(
+            [
             new Response(200, [], json_encode($response)),
-        ]);
+            ]
+        );
         $handler = HandlerStack::create($mock);
 
         $history = Middleware::history($requestsContainer);
@@ -176,9 +191,9 @@ class ReferenceTest extends TestCase {
         return new Client(['handler' => $handler]);
     }
 
-    private function assertPath($requests, $path) {
+    private function assertPath($requests, $path)
+    {
         $this->assertCount(1, $requests);
         $this->assertEquals($path, $requests[0]['request']->getUri()->getPath());
     }
-
 }
