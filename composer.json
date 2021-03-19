@@ -14,7 +14,7 @@
         }
     ],
     "require": {
-        "php":">=7.2",
+        "php":">=7.2.5",
         "ext-json": "*",
         "guzzlehttp/guzzle": "^7.2.0",
         "amphp/websocket-client": "^0.2.4"
