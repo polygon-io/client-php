@@ -30,17 +30,17 @@ class HistoricTradesV2 extends RestResource
     protected function mapper(array $response): array
     {
         $mapperFields = [
-            'T' => 'ticker',
-            't' => 'SIPTimestamp',
-            'y' => 'participantExchangeTimestamp',
-            'y' => 'tradeReportingFacilityTimestamp',
-            'q' => 'sequenceNumber',
-            'i' => 'tradeId',
-            'x' => 'exchange',
-            's' => 'size',
-            'c' => 'conditions',
-            'p' => 'price',
-            'z' => 'tapeWhereTheTradeOccured',
+            'ticker' => 'T',
+            'SIPTimestamp' => 't',
+            'participantExchangeTimestamp' => 'y',
+            'tradeReportingFacilityTimestamp' => 'y',
+            'sequenceNumber' => 'q',
+            'tradeId' => 'i',
+            'exchange' => 'x',
+            'size' => 's',
+            'conditions' => 'c',
+            'price' => 'p',
+            'tapeWhereTheTradeOccured' => 'z',
         ];
 
         $response['ticks'] = array_map(
