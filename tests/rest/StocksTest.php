@@ -1,14 +1,13 @@
 <?php
+
 namespace PolygonIO\Tests\Rest;
 
 use PHPUnit\Framework\TestCase;
-
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Response;
-
 use PolygonIO\Rest\Stocks\Stocks;
 use PolygonIO\Rest\Stocks\Exchanges;
 use PolygonIO\Rest\Stocks\HistoricTrades;
@@ -26,9 +25,11 @@ use PolygonIO\Rest\Stocks\PreviousClose;
 use PolygonIO\Rest\Stocks\Aggregates;
 use PolygonIO\Rest\Stocks\GroupedDaily;
 
-class StocksTest extends TestCase {
+class StocksTest extends TestCase
+{
 
-    public function testExportAllMethodsFromStocksApi() {
+    public function testExportAllMethodsFromStocksApi()
+    {
         $stocks = new Stocks('fake api key');
         $this->assertInstanceOf(Exchanges::class, $stocks->exchanges);
         $this->assertInstanceOf(HistoricTrades::class, $stocks->historicTrades);
@@ -47,7 +48,8 @@ class StocksTest extends TestCase {
         $this->assertInstanceOf(GroupedDaily::class, $stocks->groupedDaily);
     }
 
-    public function testExchangesGetCall() {
+    public function testExchangesGetCall()
+    {
         $requestsContainer = [];
 
         $exchanges = new Exchanges('fake-api-key');
@@ -58,54 +60,64 @@ class StocksTest extends TestCase {
         $this->assertPath($requestsContainer, '/v1/meta/exchanges');
     }
 
-    public function testHistoricTradesGetCall() {
+    public function testHistoricTradesGetCall()
+    {
         $requestsContainer = [];
 
         $historicTrades = new HistoricTrades('fake-api-key');
-        $historicTrades->httpClient = $this->getHttpMock($requestsContainer, [
+        $historicTrades->httpClient = $this->getHttpMock(
+            $requestsContainer, [
             'ticks' => [],
-        ]);
+            ]
+        );
 
         $historicTrades->get('AAPL', '2019-2-2');
 
         $this->assertPath($requestsContainer, '/v1/historic/trades/AAPL/2019-2-2');
-
     }
 
-    public function testHistoricTradesV2GetCall() {
+    public function testHistoricTradesV2GetCall()
+    {
         $requestsContainer = [];
 
         $historicTradesV2 = new HistoricTradesV2('fake-api-key');
-        $historicTradesV2->httpClient = $this->getHttpMock($requestsContainer, [
+        $historicTradesV2->httpClient = $this->getHttpMock(
+            $requestsContainer, [
             'ticks' => [],
-        ]);
+            ]
+        );
 
         $historicTradesV2->get('AAPL', '2019-2-2');
 
         $this->assertPath($requestsContainer, '/v2/ticks/stocks/trades/AAPL/2019-2-2');
-
     }
 
-    public function testHistoricQuotesGetCall() {
+    public function testHistoricQuotesGetCall()
+    {
         $requestsContainer = [];
 
         $historicQuotes = new HistoricQuotes('fake-api-key');
-        $historicQuotes->httpClient = $this->getHttpMock($requestsContainer, [
+        $historicQuotes->httpClient = $this->getHttpMock(
+            $requestsContainer, [
             'ticks' => [],
-        ]);
+            ]
+        );
 
         $historicQuotes->get('AAPL', '2019-2-2');
 
         $this->assertPath($requestsContainer, '/v1/historic/quotes/AAPL/2019-2-2');
     }
 
-    public function testHistoricQuotesV2GetCall() {
+    public function testHistoricQuotesV2GetCall()
+    {
         $requestsContainer = [];
 
         $historicQuotesV2 = new HistoricQuotesV2('fake-api-key');
-        $historicQuotesV2->httpClient = $this->getHttpMock($requestsContainer, [
+        $historicQuotesV2->httpClient = $this->getHttpMock(
+            $requestsContainer, [
             'results' => [],
-        ]);
+            ]
+        );
 
         $historicQuotesV2->get('AAPL', '2019-2-2');
 
@@ -113,7 +125,8 @@ class StocksTest extends TestCase {
     }
 
 
-    public function testLastTradeForSymbolGetCall() {
+    public function testLastTradeForSymbolGetCall()
+    {
         $requestsContainer = [];
 
         $lastTradeForSymbol = new LastTradeForSymbol('fake-api-key');
@@ -124,7 +137,8 @@ class StocksTest extends TestCase {
         $this->assertPath($requestsContainer, '/v1/last/stocks/AAPL');
     }
 
-    public function testLastQuoteForSymbolGetCall() {
+    public function testLastQuoteForSymbolGetCall()
+    {
         $requestsContainer = [];
 
         $lastTradeForSymbol = new LastQuoteForSymbol('fake-api-key');
@@ -135,7 +149,8 @@ class StocksTest extends TestCase {
         $this->assertPath($requestsContainer, '/v1/last_quote/stocks/AAPL');
     }
 
-    public function testDailyOpenCloseGetCall() {
+    public function testDailyOpenCloseGetCall()
+    {
         $requestsContainer = [];
 
         $dailyOpenClose = new DailyOpenClose('fake-api-key');
@@ -146,7 +161,8 @@ class StocksTest extends TestCase {
         $this->assertPath($requestsContainer, '/v1/open-close/AAPL/2019-2-2');
     }
 
-    public function testConditionMappingsGetCall() {
+    public function testConditionMappingsGetCall()
+    {
         $requestsContainer = [];
 
         $conditionMappings = new ConditionMappings('fake-api-key');
@@ -157,25 +173,30 @@ class StocksTest extends TestCase {
         $this->assertPath($requestsContainer, '/v1/meta/conditions/trades');
     }
 
-    public function testSnapshotAllTickersGetCall() {
+    public function testSnapshotAllTickersGetCall()
+    {
         $requestsContainer = [];
 
         $snapshotAllTickers = new SnapshotAllTickers('fake-api-key');
-        $snapshotAllTickers->httpClient = $this->getHttpMock($requestsContainer, [
+        $snapshotAllTickers->httpClient = $this->getHttpMock(
+            $requestsContainer, [
             'tickers' => [],
-        ]);
+            ]
+        );
 
         $snapshotAllTickers->get();
 
         $this->assertPath($requestsContainer, '/v2/snapshot/locale/us/markets/stocks/tickers');
     }
 
-    public function testSnapshotSingleTickerGetCall() {
+    public function testSnapshotSingleTickerGetCall()
+    {
         $requestsContainer = [];
 
         $singleTicker = new SnapshotSingleTicker('fake-api-key');
 
-        $singleTicker->httpClient = $this->getHttpMock($requestsContainer, [
+        $singleTicker->httpClient = $this->getHttpMock(
+            $requestsContainer, [
             'ticker' => [
                 'day' => [
                     'c' => 'c',
@@ -216,70 +237,86 @@ class StocksTest extends TestCase {
                     'v' => 'v',
                 ],
             ],
-        ]);
+            ]
+        );
 
         $singleTicker->get('AAPL');
 
         $this->assertPath($requestsContainer, '/v2/snapshot/locale/us/markets/stocks/tickers/AAPL');
     }
 
-    public function testSnapshotGainersLosersGetCall() {
+    public function testSnapshotGainersLosersGetCall()
+    {
         $requestsContainer = [];
 
         $snapshotGainersLosers = new SnapshotGainersLosers('fake-api-key');
-        $snapshotGainersLosers->httpClient = $this->getHttpMock($requestsContainer, [
+        $snapshotGainersLosers->httpClient = $this->getHttpMock(
+            $requestsContainer, [
             'tickers' => [],
-        ]);
+            ]
+        );
 
         $snapshotGainersLosers->get();
 
         $this->assertPath($requestsContainer, '/v2/snapshot/locale/us/markets/stocks/gainers');
     }
 
-    public function testPreviousCloseGetCall() {
+    public function testPreviousCloseGetCall()
+    {
         $requestsContainer = [];
 
         $previousClose = new PreviousClose('fake-api-key');
-        $previousClose->httpClient = $this->getHttpMock($requestsContainer, [
+        $previousClose->httpClient = $this->getHttpMock(
+            $requestsContainer, [
             'results' => [],
-        ]);
+            ]
+        );
 
         $previousClose->get('AAPL');
 
         $this->assertPath($requestsContainer, '/v2/aggs/ticker/AAPL/prev');
     }
 
-    public function testAggregatesCloseGetCall() {
+    public function testAggregatesCloseGetCall()
+    {
         $requestsContainer = [];
 
         $previousClose = new Aggregates('fake-api-key');
-        $previousClose->httpClient = $this->getHttpMock($requestsContainer, [
+        $previousClose->httpClient = $this->getHttpMock(
+            $requestsContainer, [
             'results' => [],
-        ]);
+            ]
+        );
 
         $previousClose->get('AAPL', 1, '2018-2-2', '2019-2-2');
 
         $this->assertPath($requestsContainer, '/v2/aggs/ticker/AAPL/range/1/days/2018-2-2/2019-2-2');
     }
 
-    public function testGroupedDailyGetCall() {
+    public function testGroupedDailyGetCall()
+    {
         $requestsContainer = [];
 
         $groupedDaily = new GroupedDaily('fake-api-key');
-        $groupedDaily->httpClient = $this->getHttpMock($requestsContainer, [
+        $groupedDaily->httpClient = $this->getHttpMock(
+            $requestsContainer, [
             'results' => [],
-        ]);
+            ]
+        );
 
         $groupedDaily->get('2019-2-2');
 
         $this->assertPath($requestsContainer, '/v2/aggs/grouped/locale/US/market/STOCKS/2019-2-2');
     }
 
-    private function getHttpMock(&$requestsContainer, $response=[]) {
+    private function getHttpMock(&$requestsContainer, $response = [])
+    {
 
-        $mock = new MockHandler([
+        $mock = new MockHandler(
+            [
             new Response(200, [], json_encode($response)),
-        ]);
+            ]
+        );
         $handler = HandlerStack::create($mock);
 
         $history = Middleware::history($requestsContainer);
@@ -288,7 +325,8 @@ class StocksTest extends TestCase {
         return new Client(['handler' => $handler]);
     }
 
-    private function assertPath($requests, $path) {
+    private function assertPath($requests, $path)
+    {
         $this->assertCount(1, $requests);
         $this->assertEquals($path, $requests[0]['request']->getUri()->getPath());
     }
