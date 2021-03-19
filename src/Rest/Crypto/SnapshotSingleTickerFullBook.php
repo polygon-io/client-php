@@ -5,11 +5,23 @@ use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
 
 class SnapshotSingleTickerFullBook extends RestResource {
-    public function get($tickerSymbol) {
+
+    /**
+     * @param $tickerSymbol
+     *
+     * @return array
+     */
+    public function get($tickerSymbol): array
+    {
         return $this->_get('/v2/snapshot/locale/global/markets/crypto/tickers/'.$tickerSymbol.'/book');
     }
 
-    protected function mapper($response)
+    /**
+     * @param  array  $response
+     *
+     * @return array
+     */
+    protected function mapper(array $response): array
     {
         if(array_key_exists('asks', $response['data'])) {
             $response['data']['asks'] = array_merge(function($ask) {
@@ -21,6 +33,7 @@ class SnapshotSingleTickerFullBook extends RestResource {
                 return Mappers::cryptoSnapshotBookItem($bid);
             }, $response['data']['bids']);
         }
+
         return $response;
     }
 }

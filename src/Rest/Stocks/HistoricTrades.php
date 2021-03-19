@@ -1,29 +1,38 @@
 <?php
 namespace PolygonIO\Rest\Stocks;
 
+use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
+use function Amp\Iterator\map;
 
 class HistoricTrades extends RestResource {
+
     protected $defaultParams = [
         'limit' => 100
     ];
-    public function get($tickerSymbol, $date) {
+
+    /**
+     * @param $tickerSymbol
+     * @param $date
+     *
+     * @return array
+     */
+    public function get($tickerSymbol, $date): array
+    {
         return $this->_get('/v1/historic/trades/'.$tickerSymbol.'/'.$date);
     }
 
-    protected function mapper($response)
+    /**
+     * @param  array  $response
+     *
+     * @return array
+     */
+    protected function mapper(array $response): array
     {
         $response['ticks'] = array_map(function ($tick) {
-            $tick['condition1'] = $tick['c1'];
-            $tick['condition2'] = $tick['c2'];
-            $tick['condition3'] = $tick['c3'];
-            $tick['condition4'] = $tick['c4'];
-            $tick['exchange'] = $tick['e'];
-            $tick['price'] = $tick['p'];
-            $tick['size'] = $tick['s'];
-            $tick['timestamp'] = $tick['t'];
-            return $tick;
+            return Mappers::tradeV1($tick);
         }, $response['ticks']);
+
         return $response;
     }
 }

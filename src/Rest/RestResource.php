@@ -23,7 +23,8 @@ abstract class RestResource {
         $this->httpClient = new \GuzzleHttp\Client();
     }
 
-    protected function _get($route, $params = []){
+    protected function _get(string $route, $params = []): array
+    {
         $enhancedParams =  array_merge(
             [
                 'apiKey' => $this->api_key,
@@ -41,10 +42,17 @@ abstract class RestResource {
 
         $bodyString = $response->getBody()->getContents();
         $json = json_decode($bodyString, true);
+
         return $this->mapper($json);
     }
 
-    protected function mapper($response) {
+    /**
+     * @param  array  $response
+     *
+     * @return array
+     */
+    protected function mapper(array $response): array
+    {
        return $response;
     }
 }

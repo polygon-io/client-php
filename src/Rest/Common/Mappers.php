@@ -1,89 +1,187 @@
 <?php
+
 namespace PolygonIO\Rest\Common;
 
+/**
+ * Class Mappers
+ *
+ * @package PolygonIO\Rest\Common
+ */
 class Mappers {
-    public static function quoteV1 ($tick) {
-        $tick['condition'] = $tick['c'];
-        $tick['bidExchange'] = $tick['bE'];
-        $tick['askExchange'] = $tick['aE'];
-        $tick['askPrice'] = $tick['aP'];
-        $tick['buyPrice'] = $tick['bP'];
-        $tick['bidSize'] = $tick['bS'];
-        $tick['askSize'] = $tick['aS'];
-        $tick['timestamp'] = $tick['t'];
-        return $tick;
-    }
 
-    public static function snapshotQuote ($q) {
-        $q['bidPrice'] = $q['p'];
-        $q['bidSize'] = $q['s'];
-        $q['askPrice'] = $q['P'];
-        $q['askSize'] = $q['S'];
-        $q['lastUpdateTimestamp'] = $q['t'];
-        return $q;
-    }
+    /**
+     * @param $mapFields
+     * @param $snap
+     *
+     * @return mixed
+     */
+    public static function map(array $mapFields, array $snap): array
+    {
+        foreach ($mapFields as $field => $responseField) {
+            $snap[$field] = isset($snap[$responseField]) ? $snap[$responseField] : null;
+        }
 
-    public static function tradeV1 ($tick) {
-        $tick['condition1'] = $tick['c1'];
-        $tick['condition2'] = $tick['c2'];
-        $tick['condition3'] = $tick['c3'];
-        $tick['condition4'] = $tick['c4'];
-        $tick['exchange'] = $tick['e'];
-        $tick['price'] = $tick['p'];
-        $tick['size'] = $tick['s'];
-        $tick['timestamp'] = $tick['t'];
-        return $tick;
-    }
-
-    public static function snapshotAgg ($snap) {
-        $snap['close'] =  $snap['c'];
-        $snap['high'] =  $snap['h'];
-        $snap['low'] = $snap['l'];
-        $snap['open'] = $snap['o'];
-        $snap['volume'] = $snap['v'];
         return $snap;
     }
 
-    public static function snapshotAggV2 ($snap) {
-        $snap['tickerSymbol'] = $snap['T'];
-        $snap['volume'] = $snap['v'];
-        $snap['open'] = $snap['o'];
-        $snap['close'] = $snap['c'];
-        $snap['high'] = $snap['h'];
-        $snap['low'] = $snap['l'];
-        $snap['timestamp'] = $snap['t'];
-        $snap['numberOfItems'] = $snap['n'];
-        return $snap;
+    /**
+     * @param  array  $tick
+     *
+     * @return array
+     */
+    public static function quoteV1 (array $tick): array
+    {
+        $mapperFields = [
+            'condition' => 'c',
+            'bidExchange' => 'bE',
+            'askExchange' => 'aE',
+            'askPrice' => 'aP',
+            'buyPrice' => 'bP',
+            'bidSize' => 'bS',
+            'askSize' => 'aS',
+            'timestamp' => 't',
+        ];
+
+        return self::map($mapperFields, $tick);
     }
 
-    public static function snapshotTicker ($snap) {
+    /**
+     * @param  array  $q
+     *
+     * @return array
+     */
+    public static function snapshotQuote (array $q): array
+    {
+        $mapperFields = [
+            'bidPrice' => 'p',
+            'bidSize' => 's',
+            'askPrice' => 'P',
+            'askSize' => 'S',
+            'lastUpdateTimestamp' => 't',
+        ];
+
+        return self::map($mapperFields, $q);
+    }
+
+    /**
+     * @param  array  $tick
+     *
+     * @return array
+     */
+    public static function tradeV1 (array $tick): array
+    {
+        $mapperFields = [
+            'condition1' => 'c1',
+            'condition2' => 'c2',
+            'condition3' => 'c3',
+            'condition4' => 'c4',
+            'exchange' => 'e',
+            'price' => 'p',
+            'size' => 's',
+            'timestamp' => 't',
+        ];
+
+        return self::map($mapperFields, $tick);
+    }
+
+    /**
+     * @param  array  $snap
+     *
+     * @return array
+     */
+    public static function snapshotAgg (array $snap): array
+    {
+        $mapperFields = [
+            'close' => 'c',
+            'high' => 'h',
+            'low' => 'l',
+            'open' => 'o',
+            'volume' => 'v',
+        ];
+
+        return self::map($mapperFields, $snap);
+    }
+
+    /**
+     * @param  array  $snap
+     *
+     * @return array|mixed
+     */
+    public static function snapshotAggV2 (array $snap) {
+        $mapperFields = [
+            'tickerSymbol' => 'T',
+            'volume' => 'v',
+            'open' => 'o',
+            'close' => 'c',
+            'high' => 'h',
+            'low' => 'l',
+            'timestamp' => 't',
+            'numberOfItems' => 'n',
+        ];
+
+        return self::map($mapperFields, $snap);
+    }
+
+    /**
+     * @param  array  $tick
+     *
+     * @return array
+     */
+    public static function cryptoTick(array $tick): array
+    {
+        $mapperFields = [
+            'price' => 'p',
+            'size' => 's',
+            'exchange' => 'x',
+            'conditions' => 'c',
+            'timestamp' => 't',
+        ];
+
+        return self::map($mapperFields, $tick);
+    }
+
+    /**
+     * @param  array  $item
+     *
+     * @return array
+     */
+    public static function cryptoSnapshotBookItem (array $item): array
+    {
+        $mapperFields = [
+            'price' => 'p',
+        ];
+
+        return self::map($mapperFields, $item);
+    }
+
+    /**
+     * @param  array  $snap
+     *
+     * @return array
+     */
+    public static function snapshotTicker (array $snap): array
+    {
         $snap['day'] = Mappers::snapshotAgg($snap['day']);
         $snap['lastTrade'] = Mappers::tradeV1($snap['lastTrade']);
         $snap['lastQuote'] = Mappers::snapshotQuote($snap['lastQuote']);
         $snap['min'] = Mappers::snapshotAgg($snap['min']);
         $snap['prevDay'] = Mappers::snapshotAgg($snap['prevDay']);
+
         return $snap;
     }
 
-    public static function snapshotCryptoTicker ($snap) {
+    /**
+     * @param  array  $snap
+     *
+     * @return array
+     */
+    public static function snapshotCryptoTicker (array $snap): array
+    {
         $snap['day'] = Mappers::snapshotAgg($snap['day']);
         $snap['lastTrade'] = Mappers::cryptoTick($snap['lastTrade']);
         $snap['min'] = Mappers::snapshotAgg($snap['min']);
         $snap['prevDay'] = Mappers::snapshotAgg($snap['prevDay']);
+
         return $snap;
-    }
-
-    public static function cryptoTick($tick) {
-        $tick['price'] = $tick['p'];
-        $tick['size'] = $tick['s'];
-        $tick['exchange'] = $tick['x'];
-        $tick['conditions'] = $tick['c'];
-        $tick['timestamp'] = $tick['t'];
-        return $tick;
-    }
-
-    public static function cryptoSnapshotBookItem ($item) {
-        $item['price'] = $item['p'];
-        return $item;
     }
 }

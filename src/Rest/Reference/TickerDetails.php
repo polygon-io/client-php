@@ -1,6 +1,7 @@
 <?php
 namespace PolygonIO\Rest\Reference;
 
+use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
 
 /**
@@ -8,17 +9,29 @@ use PolygonIO\Rest\RestResource;
  * @package PolygonIO\rest\reference
  */
 class TickerDetails extends RestResource {
+
     /**
-     * @param string $tickerSymbol
-     * @return mixed
+     * @param $tickerSymbol string
+     *
+     * @return array
      */
-    public function get($tickerSymbol) {
+    public function get(string $tickerSymbol): array
+    {
         return $this->_get('/v1/meta/symbols/'.$tickerSymbol.'/company');
     }
 
-    protected function mapper($response) {
-        $response['legalEntityIdentifier'] = $response['lei'];
-        $response['standardIndustryClassification'] = $response['sic'];
-        return $response;
+    /**
+     * @param  array  $response
+     *
+     * @return array
+     */
+    protected function mapper(array $response): array
+    {
+        $mapperFields = [
+            'legalEntityIdentifier' => 'lei',
+            'standardIndustryClassification' => 'sic',
+        ];
+
+        return Mappers::map($mapperFields, $response);
     }
 }

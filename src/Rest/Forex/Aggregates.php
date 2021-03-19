@@ -5,15 +5,33 @@ use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
 
 class Aggregates extends RestResource {
-    public function get($tickerSymbol, $multiplier, $from, $to, $timespan = 'days', $params = []){
+
+    /**
+     * @param $tickerSymbol
+     * @param $multiplier
+     * @param $from
+     * @param $to
+     * @param  string  $timespan
+     * @param  array  $params
+     *
+     * @return array
+     */
+    public function get($tickerSymbol, $multiplier, $from, $to, $timespan = 'days', $params = []): array
+    {
         return $this->_get('/v2/aggs/ticker/'.$tickerSymbol.'/range/'.$multiplier.'/'.$timespan.'/'.$from.'/'.$to, $params);
     }
 
-    protected function mapper($response)
+    /**
+     * @param  array  $response
+     *
+     * @return array
+     */
+    protected function mapper(array $response): array
     {
         $response['results'] = array_map(function ($result) {
             return Mappers::snapshotAggV2($result);
         }, $response['results']);
+
         return $response;
     }
 }
