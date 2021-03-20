@@ -12,9 +12,10 @@ use PolygonIO\Rest\RestResource;
  */
 class SnapshotAllTickers extends RestResource
 {
-
     /**
      * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function get(): array
     {
@@ -31,7 +32,8 @@ class SnapshotAllTickers extends RestResource
         $response['tickers'] = array_map(
             function ($ticker) {
                 return Mappers::snapshotTicker($ticker);
-            }, $response['tickers']
+            },
+            $response['tickers']
         );
 
         return $response;

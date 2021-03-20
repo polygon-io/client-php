@@ -4,6 +4,11 @@ namespace PolygonIO\Rest\Forex;
 
 use PolygonIO\Rest\RestResource;
 
+/**
+ * Class RealTimeCurrencyConversion
+ *
+ * @package PolygonIO\Rest\Forex
+ */
 class RealTimeCurrencyConversion extends RestResource
 {
     protected $defaultParams = [
@@ -11,7 +16,16 @@ class RealTimeCurrencyConversion extends RestResource
         'precision' => 2,
     ];
 
-    public function get($from, $to, $params = [])
+    /**
+     * @param $from
+     * @param $to
+     * @param  array  $params
+     *
+     * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function get($from, $to, $params = []): array
     {
         return $this->_get('/v1/conversion/' . $from . '/' . $to, $params);
     }

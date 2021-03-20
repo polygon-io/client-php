@@ -15,9 +15,11 @@ class PreviousClose extends RestResource
 
     /**
      * @param $tickerSymbol
-     * @param array $params
+     * @param  array  $params
      *
      * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function get($tickerSymbol, $params = []): array
     {
@@ -34,7 +36,8 @@ class PreviousClose extends RestResource
         $response['results'] = array_map(
             function ($result) {
                 return Mappers::snapshotAggV2($result);
-            }, $response['results']
+            },
+            $response['results']
         );
 
         return $response;

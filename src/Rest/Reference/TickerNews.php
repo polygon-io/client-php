@@ -18,11 +18,13 @@ class TickerNews extends RestResource
 
     /**
      * @param $tickerSymbol
-     * @param array $params
+     * @param  array  $params
      *
      * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function get($tickerSymbol, $params = []): array
+    public function get(string $tickerSymbol, array $params = []): array
     {
         return $this->_get('/v1/meta/symbols/' . $tickerSymbol . '/news', $params);
     }

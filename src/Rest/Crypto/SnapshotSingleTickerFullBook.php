@@ -7,11 +7,12 @@ use PolygonIO\Rest\RestResource;
 
 class SnapshotSingleTickerFullBook extends RestResource
 {
-
     /**
      * @param $tickerSymbol
      *
      * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function get($tickerSymbol): array
     {
@@ -29,14 +30,16 @@ class SnapshotSingleTickerFullBook extends RestResource
             $response['data']['asks'] = array_merge(
                 function ($ask) {
                     return Mappers::cryptoSnapshotBookItem($ask);
-                }, $response['data']['asks']
+                },
+                $response['data']['asks']
             );
         }
         if (array_key_exists('bids', $response['data'])) {
             $response['data']['bids'] = array_merge(
                 function ($bid) {
                     return Mappers::cryptoSnapshotBookItem($bid);
-                }, $response['data']['bids']
+                },
+                $response['data']['bids']
             );
         }
 

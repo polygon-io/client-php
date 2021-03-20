@@ -5,6 +5,11 @@ namespace PolygonIO\Rest\Stocks;
 use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
 
+/**
+ * Class HistoricQuotesV2
+ *
+ * @package PolygonIO\Rest\Stocks
+ */
 class HistoricQuotesV2 extends RestResource
 {
     protected $defaultParams = [
@@ -16,6 +21,8 @@ class HistoricQuotesV2 extends RestResource
      * @param $date
      *
      * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function get($tickerSymbol, $date): array
     {
@@ -52,7 +59,8 @@ class HistoricQuotesV2 extends RestResource
                     $mapperFields
                 ) {
                     return Mappers::map($mapperFields, $result);
-                }, $response['results']
+                },
+                $response['results']
             );
         }
 

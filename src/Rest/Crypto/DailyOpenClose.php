@@ -19,6 +19,8 @@ class DailyOpenClose extends RestResource
      * @param $date
      *
      * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function get($from, $to, $date): array
     {

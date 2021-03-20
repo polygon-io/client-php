@@ -4,6 +4,11 @@ namespace PolygonIO\Rest\Stocks;
 
 use PolygonIO\Rest\RestResource;
 
+/**
+ * Class HistoricTradesV2
+ *
+ * @package PolygonIO\Rest\Stocks
+ */
 class HistoricTradesV2 extends RestResource
 {
 
@@ -16,6 +21,8 @@ class HistoricTradesV2 extends RestResource
      * @param $date
      *
      * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function get($tickerSymbol, $date): array
     {
@@ -47,7 +54,8 @@ class HistoricTradesV2 extends RestResource
             function ($tick) {
 
                 return $tick;
-            }, $response['ticks']
+            },
+            $response['ticks']
         );
 
         return $response;

@@ -6,7 +6,15 @@ use PolygonIO\Rest\RestResource;
 
 class LastTradeForCryptoPair extends RestResource
 {
-    public function get($from, $to)
+    /**
+     * @param $from
+     * @param $to
+     *
+     * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function get($from, $to): array
     {
         return $this->_get('/v1/last/crypto/' . $from . '/' . $to);
     }

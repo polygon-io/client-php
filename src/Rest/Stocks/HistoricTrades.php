@@ -7,6 +7,11 @@ use PolygonIO\Rest\RestResource;
 
 use function Amp\Iterator\map;
 
+/**
+ * Class HistoricTrades
+ *
+ * @package PolygonIO\Rest\Stocks
+ */
 class HistoricTrades extends RestResource
 {
     protected $defaultParams = [
@@ -18,6 +23,8 @@ class HistoricTrades extends RestResource
      * @param $date
      *
      * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function get($tickerSymbol, $date): array
     {
@@ -34,7 +41,8 @@ class HistoricTrades extends RestResource
         $response['ticks'] = array_map(
             function ($tick) {
                 return Mappers::tradeV1($tick);
-            }, $response['ticks']
+            },
+            $response['ticks']
         );
 
         return $response;

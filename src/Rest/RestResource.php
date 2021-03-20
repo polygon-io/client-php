@@ -2,6 +2,8 @@
 
 namespace PolygonIO\Rest;
 
+use Psr\Http\Client\ClientInterface;
+
 /**
  * Class RestResource
  *
@@ -9,29 +11,53 @@ namespace PolygonIO\Rest;
  */
 abstract class RestResource
 {
+    public $httpClient;
     protected $defaultParams = [];
     protected $route;
-
-    public $httpClient;
     protected $API_URL = 'https://api.polygon.io';
-    protected $api_key;
+    private $apiKey;
 
     /**
-     * Polygon constructor.
+     * RestResource constructor.
      *
-     * @param $apiKey
+     * @param  string  $apiKey
+     * @param  ClientInterface|null  $httpClient
      */
-    public function __construct($apiKey)
+    public function __construct(string $apiKey, ClientInterface $httpClient = null)
     {
-        $this->api_key = $apiKey;
-        $this->httpClient = new \GuzzleHttp\Client();
+        $this->apiKey = $apiKey;
+        $this->httpClient = $httpClient ? $httpClient : new \GuzzleHttp\Client();
     }
 
+    /**
+     * @return ClientInterface
+     */
+    public function getHttpClient(): ClientInterface
+    {
+        return $this->httpClient;
+    }
+
+    /**
+     * @param  ClientInterface  $httpClient
+     */
+    public function setHttpClient(ClientInterface $httpClient): void
+    {
+        $this->httpClient = $httpClient;
+    }
+
+    /**
+     * @param  string  $route
+     * @param  array  $params
+     *
+     * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
     protected function _get(string $route, $params = []): array
     {
         $enhancedParams =  array_merge(
             [
-                'apiKey' => $this->api_key,
+                'apiKey' => $this->apiKey,
             ],
             array_merge(
                 $this->defaultParams,
@@ -41,7 +67,8 @@ abstract class RestResource
 
         $route = $this->API_URL . $route;
         $response = $this->httpClient->get(
-            $route, [
+            $route,
+            [
             'query' => $enhancedParams
             ]
         );

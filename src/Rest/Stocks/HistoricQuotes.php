@@ -5,6 +5,11 @@ namespace PolygonIO\Rest\Stocks;
 use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
 
+/**
+ * Class HistoricQuotes
+ *
+ * @package PolygonIO\Rest\Stocks
+ */
 class HistoricQuotes extends RestResource
 {
 
@@ -17,6 +22,8 @@ class HistoricQuotes extends RestResource
      * @param $date
      *
      * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function get($tickerSymbol, $date): array
     {
@@ -33,7 +40,8 @@ class HistoricQuotes extends RestResource
         $response['ticks'] = array_map(
             function ($tick) {
                 return Mappers::quoteV1($tick);
-            }, $response['ticks']
+            },
+            $response['ticks']
         );
 
         return $response;

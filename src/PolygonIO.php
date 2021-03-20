@@ -7,8 +7,21 @@ use PolygonIO\Websockets\Websockets;
 
 class PolygonIO
 {
-    public $api_key;
+    /**
+     * @var string
+     */
+    private $apiKey;
+
+    /**
+     * @deprecated
+     * @var Rest
+     */
     public $rest;
+
+    /**
+     * @deprecated
+     * @var Websockets
+     */
     public $websockets;
 
     /**
@@ -16,10 +29,27 @@ class PolygonIO
      *
      * @param $apiKey
      */
-    public function __construct($apiKey)
+    public function __construct(string $apiKey)
     {
-        $this->api_key = $apiKey;
+        $this->apiKey = $apiKey;
+
         $this->rest = new Rest($apiKey);
         $this->websockets = new Websockets($apiKey);
+    }
+
+    /**
+     * @return Rest
+     */
+    public function rest(): Rest
+    {
+        return new Rest($this->apiKey);
+    }
+
+    /**
+     * @return Websockets
+     */
+    public function websockets(): Websockets
+    {
+        return new Websockets($this->apiKey);
     }
 }

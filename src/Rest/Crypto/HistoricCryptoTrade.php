@@ -21,9 +21,11 @@ class HistoricCryptoTrade extends RestResource
      * @param $from
      * @param $to
      * @param $date
-     * @param array $params
+     * @param  array  $params
      *
      * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function get($from, $to, $date, $params = []): array
     {
@@ -40,7 +42,8 @@ class HistoricCryptoTrade extends RestResource
         $response['ticks'] = array_map(
             function ($tick) {
                 return Mappers::cryptoTick($tick);
-            }, $response['ticks']
+            },
+            $response['ticks']
         );
         return $response;
     }

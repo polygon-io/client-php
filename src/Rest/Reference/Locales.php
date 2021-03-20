@@ -13,7 +13,12 @@ class Locales extends RestResource
 {
     protected $route = '/v2/reference/locales';
 
-    public function get()
+    /**
+     * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function get(): array
     {
         return $this->_get($this->route);
     }

@@ -15,6 +15,8 @@ class TickerTypes extends RestResource
 
     /**
      * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function get(): array
     {

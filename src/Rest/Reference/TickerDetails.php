@@ -17,6 +17,8 @@ class TickerDetails extends RestResource
      * @param $tickerSymbol string
      *
      * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function get(string $tickerSymbol): array
     {

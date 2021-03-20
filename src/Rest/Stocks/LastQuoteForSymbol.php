@@ -4,9 +4,21 @@ namespace PolygonIO\Rest\Stocks;
 
 use PolygonIO\Rest\RestResource;
 
+/**
+ * Class LastQuoteForSymbol
+ *
+ * @package PolygonIO\Rest\Stocks
+ */
 class LastQuoteForSymbol extends RestResource
 {
-    public function get($tickerSymbol)
+    /**
+     * @param $tickerSymbol
+     *
+     * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function get($tickerSymbol): array
     {
         return $this->_get('/v1/last_quote/stocks/' . $tickerSymbol);
     }

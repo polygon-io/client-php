@@ -12,10 +12,13 @@ use PolygonIO\Rest\RestResource;
 class StockSplits extends RestResource
 {
     /**
-     * @param  string $tickerSymbol
+     * @param  string  $tickerSymbol
+     *
      * @return mixed
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function get($tickerSymbol)
+    public function get(string $tickerSymbol)
     {
         return $this->_get('/v2/reference/splits/' . $tickerSymbol);
     }

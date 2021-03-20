@@ -5,6 +5,11 @@ namespace PolygonIO\Rest\Stocks;
 use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
 
+/**
+ * Class Aggregates
+ *
+ * @package PolygonIO\Rest\Stocks
+ */
 class Aggregates extends RestResource
 {
 
@@ -13,10 +18,12 @@ class Aggregates extends RestResource
      * @param $multiplier
      * @param $from
      * @param $to
-     * @param string $timespan
-     * @param array  $params
+     * @param  string  $timespan
+     * @param  array  $params
      *
      * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function get($tickerSymbol, $multiplier, $from, $to, $timespan = 'days', $params = []): array
     {
@@ -33,7 +40,8 @@ class Aggregates extends RestResource
         $response['results'] = array_map(
             function ($result) {
                 return Mappers::snapshotAggV2($result);
-            }, $response['results']
+            },
+            $response['results']
         );
 
         return $response;

@@ -20,9 +20,12 @@ class Tickers extends RestResource
 
     /**
      * @param  $params
+     *
      * @return mixed
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function get($params = [])
+    public function get(array $params = [])
     {
         return $this->_get($this->route, $params);
     }

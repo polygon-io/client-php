@@ -12,11 +12,12 @@ use PolygonIO\Rest\RestResource;
  */
 class SnapshotSingleTicker extends RestResource
 {
-
     /**
      * @param $tickerSymbol
      *
      * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function get($tickerSymbol): array
     {

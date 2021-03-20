@@ -13,7 +13,12 @@ class MarketStatus extends RestResource
 {
     protected $route = '/v1/marketstatus/now';
 
-    public function get()
+    /**
+     * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function get(): array
     {
         return $this->_get($this->route);
     }

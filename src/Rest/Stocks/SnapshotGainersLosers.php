@@ -14,9 +14,11 @@ class SnapshotGainersLosers extends RestResource
 {
 
     /**
-     * @param string $direction
+     * @param  string  $direction
      *
      * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function get($direction = 'gainers'): array
     {
@@ -33,7 +35,8 @@ class SnapshotGainersLosers extends RestResource
         $response['tickers'] = array_map(
             function ($ticker) {
                 return Mappers::snapshotTicker($ticker);
-            }, $response['tickers']
+            },
+            $response['tickers']
         );
 
         return $response;
