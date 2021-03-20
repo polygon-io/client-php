@@ -5,6 +5,11 @@ namespace PolygonIO;
 use PolygonIO\Rest\Rest;
 use PolygonIO\Websockets\Websockets;
 
+/**
+ * Class PolygonIO
+ *
+ * @package PolygonIO
+ */
 class PolygonIO
 {
     /**

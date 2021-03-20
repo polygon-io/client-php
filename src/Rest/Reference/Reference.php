@@ -87,6 +87,8 @@ class Reference
      */
     public function __construct(string $apiKey)
     {
+        $this->apiKey = $apiKey;
+
         $this->tickers = new Tickers($apiKey);
         $this->tickerTypes = new TickerTypes($apiKey);
         $this->tickerDetails = new TickerDetails($apiKey);

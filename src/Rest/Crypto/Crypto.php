@@ -84,6 +84,8 @@ class Crypto
      */
     public function __construct(string $apiKey)
     {
+        $this->apiKey = $apiKey;
+
         $this->previousClose = new PreviousClose($apiKey);
         $this->groupedDaily = new GroupedDaily($apiKey);
         $this->aggregates = new Aggregates($apiKey);

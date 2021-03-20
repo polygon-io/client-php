@@ -12,7 +12,6 @@ use PolygonIO\Rest\RestResource;
  */
 class Aggregates extends RestResource
 {
-
     /**
      * @param $tickerSymbol
      * @param $multiplier
