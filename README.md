@@ -17,7 +17,7 @@ composer require polygon-io/api
 
 ## [Rest API](https://polygon.io/docs/#getting-started)
 
-The `\PolygonIO\rest\Rest` class export 4 modules:
+The `\PolygonIO\Rest\Rest` class export 4 modules:
 
 - reference
 - stocks
@@ -26,12 +26,12 @@ The `\PolygonIO\rest\Rest` class export 4 modules:
 
 ```
 <?php
-require __DIR__ . '/vendor/autload.php';
-use PolygonIO\rest\Rest;
+require __DIR__ . '/vendor/autoload.php';
+use PolygonIO\Rest\Rest;
 
-$rest = new Rest('your api key')
+$rest = new Rest('your api key');
 
-print_r($rest->forex->realtimeCurrencyConverion->get('USD', 'EUR', 10));
+print_r($rest->forex->realTimeCurrencyConversion->get('USD', 'EUR', 10));
 
 ```
 
@@ -42,7 +42,7 @@ You can only use one websocket client by php thread since the event loop is in a
 
 ```
 <?php
-require __DIR__ . '/vendor/autload.php';
+require __DIR__ . '/vendor/autoload.php';
 use PolygonIO;
 
 $client = new PolygonIO('your apiKey');
@@ -52,10 +52,10 @@ $client->websockets->forex(
     function($data) {
         // your handler function
     }
-)
+);
 ```
 
-## Developement
+## Development
 
 ### prerequisite
 
