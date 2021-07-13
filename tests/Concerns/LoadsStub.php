@@ -12,7 +12,7 @@ trait LoadsStub
      *
      * @return mixed
      */
-    public function loadStubFile(string $filePath): mixed
+    public function loadStubFile(string $filePath)
     {
         return file_get_contents(__DIR__ . '/../stubs/' . $filePath);
     }
@@ -20,7 +20,7 @@ trait LoadsStub
     /*
      * Loads json stub files from stubs folder and parses into an array.
      */
-    public function loadJsonStubFile(string $filePath): array
+    public function loadJsonStubFile(string $filePath)
     {
         return json_decode($this->loadStubFile($filePath), true);
     }
