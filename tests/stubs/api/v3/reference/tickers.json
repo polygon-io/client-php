@@ -1,0 +1,22 @@
+{
+    "results": [
+        {
+            "ticker": "A",
+            "name": "Agilent Technologies Inc.",
+            "market": "stocks",
+            "locale": "us",
+            "primary_exchange": "XNYS",
+            "type": "CS",
+            "active": true,
+            "currency_name": "usd",
+            "cik": "0001090872",
+            "composite_figi": "BBG000BWQYZ5",
+            "share_class_figi": "BBG001SCTQY4",
+            "last_updated_utc": "2021-04-25T00:00:00Z"
+        }
+    ],
+    "status": "OK",
+    "request_id": "e70013d92930de90e089dc8fa098888e",
+    "count": 1,
+    "next_url": "https://api.polygon.io/vX/reference/tickers?cursor=YWN0aXZlPXRydWUmZGF0ZT0yMDIxLTA0LTI1JmxpbWl0PTEmb3JkZXI9YXNjJnBhZ2VfbWFya2VyPUElN0M5YWRjMjY0ZTgyM2E1ZjBiOGUyNDc5YmZiOGE1YmYwNDVkYzU0YjgwMDcyMWE2YmI1ZjBjMjQwMjU4MjFmNGZiJnNvcnQ9dGlja2Vy"
+}

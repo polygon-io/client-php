@@ -1,0 +1,15 @@
+{
+    "market": "extended-hours",
+    "earlyHours": false,
+    "afterHours": true,
+    "serverTime": "2020-11-10T22:37:37.000Z",
+    "exchanges": {
+        "nyse": "extended-hours",
+        "nasdaq": "extended-hours",
+        "otc": "closed"
+    },
+    "currencies": {
+        "fx": "open",
+        "crypto": "open"
+    }
+}

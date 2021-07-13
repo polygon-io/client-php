@@ -1,0 +1,12 @@
+{
+    "symbol": "AAPL",
+    "status": "success",
+    "request_id": "fbb6074f249ea54a1ad924e4967c36af",
+    "last": {
+        "cond1": 37,
+        "exchange": 4,
+        "price": 119.1802,
+        "size": 10,
+        "timestamp": 1605122370210
+    }
+}

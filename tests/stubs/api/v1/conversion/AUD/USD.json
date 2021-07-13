@@ -1,0 +1,13 @@
+{
+    "status": "success",
+    "last": {
+        "bid": 1.3672596,
+        "ask": 1.3673344,
+        "exchange": 48,
+        "timestamp": 1605555313000
+    },
+    "from": "AUD",
+    "to": "USD",
+    "initialAmount": 100,
+    "converted": 73.14
+}

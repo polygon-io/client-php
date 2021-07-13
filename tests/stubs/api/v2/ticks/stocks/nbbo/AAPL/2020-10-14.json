@@ -1,0 +1,92 @@
+{
+    "ticker": "AAPL",
+    "success": true,
+    "results_count": 2,
+    "db_latency": 43,
+    "results": [
+        {
+            "t": 1517562000065700400,
+            "y": 1517562000065321200,
+            "q": 2060,
+            "c": [
+                1
+            ],
+            "z": 3,
+            "p": 102.7,
+            "s": 60,
+            "x": 11,
+            "P": 0,
+            "S": 0,
+            "X": 0
+        },
+        {
+            "t": 1517562000065791500,
+            "y": 1517562000065408300,
+            "q": 2061,
+            "c": [
+                1
+            ],
+            "z": 3,
+            "p": 170,
+            "s": 2,
+            "x": 11,
+            "P": 0,
+            "S": 0,
+            "X": 0
+        }
+    ],
+    "map": {
+        "t": {
+            "name": "sip_timestamp",
+            "type": "int64"
+        },
+        "y": {
+            "name": "participant_timestamp",
+            "type": "int64"
+        },
+        "i": {
+            "name": "indicators",
+            "type": "int"
+        },
+        "P": {
+            "name": "ask_price",
+            "type": "float64"
+        },
+        "X": {
+            "name": "ask_exchange",
+            "type": "int"
+        },
+        "f": {
+            "name": "trf_timestamp",
+            "type": "int64"
+        },
+        "q": {
+            "name": "sequence_number",
+            "type": "int"
+        },
+        "c": {
+            "name": "conditions",
+            "type": "int"
+        },
+        "p": {
+            "name": "bid_price",
+            "type": "float64"
+        },
+        "s": {
+            "name": "bid_size",
+            "type": "int"
+        },
+        "x": {
+            "name": "bid_exchange",
+            "type": "int"
+        },
+        "S": {
+            "name": "ask_size",
+            "type": "int"
+        },
+        "z": {
+            "name": "tape",
+            "type": "int"
+        }
+    }
+}

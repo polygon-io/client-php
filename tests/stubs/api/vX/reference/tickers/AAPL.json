@@ -1,0 +1,29 @@
+{
+    "results": {
+        "ticker": "AAPL",
+        "name": "Apple Inc.",
+        "market": "stocks",
+        "locale": "us",
+        "primary_exchange": "XNAS",
+        "type": "CS",
+        "active": true,
+        "currency_name": "usd",
+        "cik": "0000320193",
+        "composite_figi": "BBG000B9XRY4",
+        "share_class_figi": "BBG001S5N8V8",
+        "last_updated_utc": "2020-12-27T00:00:00Z",
+        "outstanding_shares": 17001800000,
+        "market_cap": 2082042128180,
+        "phone_number": "(408) 996-1010",
+        "address": {
+            "address1": "One Apple Park Way",
+            "city": "Cupertino",
+            "state": "CA"
+        },
+        "sic_code": "3571",
+        "sic_description": "ELECTRONIC COMPUTERS"
+    },
+    "status": "OK",
+    "request_id": "31d59dda-80e5-4721-8496-d0d32a654afe",
+    "count": 1
+}

@@ -17,7 +17,7 @@ class HistoricTradesV2Test extends \PHPUnit\Framework\TestCase
 
         $historicTradesV2 = new HistoricTradesV2('fake-api-key');
         $historicTradesV2->httpClient = $this->getHttpMock(
-            $requestsContainer, $this->loadJsonStubFile('api/v2/ticks/stocks/trades.json')
+            $requestsContainer, $this->loadJsonStubFile('api/v2/ticks/stocks/AAPL/2020-10-14.json')
         );
 
         $historicTradesV2->get('AAPL', '2019-2-2');
