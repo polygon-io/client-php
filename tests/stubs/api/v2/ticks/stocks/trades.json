@@ -1,0 +1,90 @@
+{
+    "ticker": "AAPL",
+    "results_count": 2,
+    "db_latency": 11,
+    "success": true,
+    "results": [
+        {
+            "t": 1517562000016036600,
+            "y": 1517562000015577000,
+            "q": 1063,
+            "i": "1",
+            "x": 11,
+            "s": 100,
+            "c": [
+                12,
+                41
+            ],
+            "p": 171.55,
+            "z": 3
+        },
+        {
+            "t": 1517562000016038100,
+            "y": 1517562000015577600,
+            "q": 1064,
+            "i": "2",
+            "x": 11,
+            "s": 100,
+            "c": [
+                12,
+                41
+            ],
+            "p": 171.55,
+            "z": 3
+        }
+    ],
+    "map": {
+        "I": {
+            "name": "orig_id",
+            "type": "string"
+        },
+        "x": {
+            "name": "exchange",
+            "type": "int"
+        },
+        "p": {
+            "name": "price",
+            "type": "float64"
+        },
+        "i": {
+            "name": "id",
+            "type": "string"
+        },
+        "e": {
+            "name": "correction",
+            "type": "int"
+        },
+        "r": {
+            "name": "trf_id",
+            "type": "int"
+        },
+        "t": {
+            "name": "sip_timestamp",
+            "type": "int64"
+        },
+        "y": {
+            "name": "participant_timestamp",
+            "type": "int64"
+        },
+        "f": {
+            "name": "trf_timestamp",
+            "type": "int64"
+        },
+        "q": {
+            "name": "sequence_number",
+            "type": "int64"
+        },
+        "c": {
+            "name": "conditions",
+            "type": "int"
+        },
+        "s": {
+            "name": "size",
+            "type": "int"
+        },
+        "z": {
+            "name": "tape",
+            "type": "int"
+        }
+    }
+}
