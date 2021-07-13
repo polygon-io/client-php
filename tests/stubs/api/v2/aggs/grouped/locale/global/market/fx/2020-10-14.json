@@ -1,0 +1,18 @@
+{
+    "ticker": "C:EURUSD",
+    "status": "OK",
+    "queryCount": 1,
+    "resultsCount": 1,
+    "adjusted": true,
+    "results": [
+        {
+            "T": "C:EURUSD",
+            "v": 14500,
+            "o": 1.18421,
+            "c": 1.18522,
+            "h": 1.18545,
+            "l": 1.18341,
+            "t": 1605416400000
+        }
+    ]
+}

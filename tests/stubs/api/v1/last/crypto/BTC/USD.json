@@ -1,0 +1,14 @@
+{
+    "last": {
+        "conditions": [
+            1
+        ],
+        "exchange": 4,
+        "price": 16835.42,
+        "size": 0.006909,
+        "timestamp": 1605560885027
+    },
+    "request_id": "d2d779df015fe2b7fbb8e58366610ef7",
+    "status": "success",
+    "symbol": "BTC-USD"
+}

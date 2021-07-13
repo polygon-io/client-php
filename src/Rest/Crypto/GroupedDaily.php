@@ -15,17 +15,15 @@ class GroupedDaily extends RestResource
 
     /**
      * @param $date
-     * @param  string  $locale
-     * @param  string  $market
      * @param  array  $params
      *
      * @return array
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function get($date, $locale = 'US', $market = 'CRYPTO', $params = []): array
+    public function get($date, array $params = []): array
     {
-        return $this->_get('/v2/aggs/grouped/locale/' . $locale . '/market/' . $market . '/' . $date, $params);
+        return $this->_get('/v2/aggs/grouped/locale/global/market/crypto/' . $date, $params);
     }
 
     /**

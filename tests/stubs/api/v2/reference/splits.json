@@ -1,0 +1,35 @@
+{
+    "status": "OK",
+    "count": 4,
+    "results": [
+        {
+            "ticker": "AAPL",
+            "exDate": "2020-08-31T00:00:00.000Z",
+            "paymentDate": "2020-08-28T00:00:00.000Z",
+            "declaredDate": "2020-07-30T00:00:00.000Z",
+            "ratio": 0.25,
+            "tofactor": 1,
+            "forfactor": 4
+        },
+        {
+            "ticker": "AAPL",
+            "exDate": "2014-06-09T00:00:00.000Z",
+            "paymentDate": "2014-06-10T00:00:00.000Z",
+            "ratio": 0.14285714285714285,
+            "tofactor": 1,
+            "forfactor": 7
+        },
+        {
+            "ticker": "AAPL",
+            "exDate": "2005-02-28T00:00:00.000Z",
+            "paymentDate": "2005-02-28T00:00:00.000Z",
+            "ratio": 0.5
+        },
+        {
+            "ticker": "AAPL",
+            "exDate": "2000-06-21T00:00:00.000Z",
+            "paymentDate": "2000-06-21T00:00:00.000Z",
+            "ratio": 0.5
+        }
+    ]
+}

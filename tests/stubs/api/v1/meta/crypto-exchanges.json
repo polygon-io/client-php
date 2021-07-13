@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "type": "exchange",
+        "market": "crypto",
+        "name": "Coinbase",
+        "url": "https://www.coinbase.com/"
+    },
+    {
+        "id": 2,
+        "type": "exchange",
+        "market": "crypto",
+        "name": "BITFINEX",
+        "url": "https://www.bitfinex.com/"
+    },
+    {
+        "id": 6,
+        "type": "exchange",
+        "market": "crypto",
+        "name": "Bitstamp",
+        "url": "https://www.bitstamp.net/"
+    },
+    {
+        "id": 23,
+        "type": "exchange",
+        "market": "crypto",
+        "name": "Kraken",
+        "url": "https://www.kraken.com/en-us/"
+    }
+]

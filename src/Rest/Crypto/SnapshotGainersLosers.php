@@ -20,7 +20,7 @@ class SnapshotGainersLosers extends RestResource
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function get($direction = 'gainers'): array
+    public function get(string $direction = 'gainers'): array
     {
         return $this->_get('/v2/snapshot/locale/global/markets/crypto/' . $direction);
     }
@@ -34,7 +34,7 @@ class SnapshotGainersLosers extends RestResource
     {
         $response['tickers'] = array_map(
             function ($ticker) {
-                return Mappers::snapshotTicker($ticker);
+                return Mappers::snapshotCryptoTicker($ticker);
             },
             $response['tickers']
         );

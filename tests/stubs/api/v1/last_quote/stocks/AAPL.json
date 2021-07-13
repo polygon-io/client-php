@@ -1,0 +1,14 @@
+{
+    "symbol": "AAPL",
+    "status": "success",
+    "request_id": "9463580f28a577b10c3b46266fc7203e",
+    "last": {
+        "askexchange": 8,
+        "askprice": 119.51,
+        "asksize": 8,
+        "bidexchange": 11,
+        "bidprice": 119.5,
+        "bidsize": 2,
+        "timestamp": 1605121721850
+    }
+}
