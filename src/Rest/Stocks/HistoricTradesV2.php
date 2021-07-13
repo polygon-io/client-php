@@ -50,12 +50,12 @@ class HistoricTradesV2 extends RestResource
             'tapeWhereTheTradeOccured' => 'z',
         ];
 
-        $response['ticks'] = array_map(
-            function ($tick) {
+        $response['results'] = array_map(
+            function ($result) {
 
-                return $tick;
+                return $result;
             },
-            $response['ticks']
+            $response['results']
         );
 
         return $response;
