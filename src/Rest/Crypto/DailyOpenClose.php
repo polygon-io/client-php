@@ -2,8 +2,8 @@
 
 namespace PolygonIO\Rest\Crypto;
 
-use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
+use \PolygonIO\Rest\Common\Mappers;
 
 /**
  * Class DailyOpenClose
@@ -35,11 +35,15 @@ class DailyOpenClose extends RestResource
     protected function mapper(array $response): array
     {
         if (array_key_exists('openTrades', $response)) {
-            $response['openTrades'] = array_map(Mappers::cryptoTick, $response['openTrades']);
+            $response['openTrades'] = array_map(function($ticker) {
+                return Mappers::cryptoTick($ticker);
+            }, $response['openTrades']);
         }
 
         if (array_key_exists('closingTrades', $response)) {
-            $response['closingTrades'] = array_map(Mappers::cryptoTick, $response['closingTrades']);
+            $response['closingTrades'] = array_map(function ($ticker) {
+                return Mappers::cryptoTick($ticker);
+            }, $response['closingTrades']);
         }
 
         return $response;

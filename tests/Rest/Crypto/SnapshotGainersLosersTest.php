@@ -4,11 +4,13 @@ namespace PolygonIO\Tests\Rest\Crypto;
 
 use PHPUnit\Framework\TestCase;
 use PolygonIO\Rest\Crypto\SnapshotGainersLosers;
+use PolygonIO\Tests\Concerns\LoadsStub;
 use PolygonIO\Tests\Helpers\MocksHttp;
 
 class SnapshotGainersLosersTest extends TestCase
 {
     use MocksHttp;
+    use LoadsStub;
 
     public function testSnapshotGainersLosersGetCall()
     {
@@ -16,9 +18,8 @@ class SnapshotGainersLosersTest extends TestCase
 
         $snapshotGainersLosers = new SnapshotGainersLosers('fake-api-key');
         $snapshotGainersLosers->httpClient = $this->getHttpMock(
-            $requestsContainer, [
-                'tickers' => [],
-            ]
+            $requestsContainer,
+            $this->loadJsonStubFile('api/v2/snapshot/locale/global/markets/crypto/gainers.json')
         );
 
         $snapshotGainersLosers->get();

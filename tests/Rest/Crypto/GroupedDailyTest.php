@@ -3,11 +3,13 @@
 namespace PolygonIO\Tests\Rest\Crypto;
 
 use PolygonIO\Rest\Crypto\GroupedDaily;
+use PolygonIO\Tests\Concerns\LoadsStub;
 use PolygonIO\Tests\Helpers\MocksHttp;
 
 class GroupedDailyTest extends \PHPUnit\Framework\TestCase
 {
     use MocksHttp;
+    use LoadsStub;
 
     public function testGroupedDailyGetCall()
     {
@@ -15,13 +17,11 @@ class GroupedDailyTest extends \PHPUnit\Framework\TestCase
 
         $groupedDaily = new GroupedDaily('fake-api-key');
         $groupedDaily->httpClient = $this->getHttpMock(
-            $requestsContainer, [
-                'results' => [],
-            ]
+            $requestsContainer, $this->loadJsonStubFile('api/v2/aggs/grouped/locale/global/market/crypto/2020-10-14.json')
         );
 
-        $groupedDaily->get('2019-2-2');
+        $groupedDaily->get('2020-10-14');
 
-        $this->assertPath($requestsContainer, '/v2/aggs/grouped/locale/US/market/CRYPTO/2019-2-2');
+        $this->assertPath($requestsContainer, '/v2/aggs/grouped/locale/global/market/crypto/2020-10-14');
     }
 }
