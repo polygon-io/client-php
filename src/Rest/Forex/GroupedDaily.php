@@ -23,7 +23,7 @@ class GroupedDaily extends RestResource
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function get($date, $locale = 'US', $market = 'FX', $params = []): array
+    public function get($date, $locale = 'us', $market = 'fx', $params = []): array
     {
         return $this->_get('/v2/aggs/grouped/locale/' . $locale . '/market/' . $market . '/' . $date, $params);
     }

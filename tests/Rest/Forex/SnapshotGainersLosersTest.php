@@ -3,11 +3,13 @@
 namespace PolygonIO\Tests\Rest\Forex;
 
 use PolygonIO\Rest\Forex\SnapshotGainersLosers;
+use PolygonIO\Tests\Concerns\LoadsStub;
 use PolygonIO\Tests\Helpers\MocksHttp;
 
 class SnapshotGainersLosersTest extends \PHPUnit\Framework\TestCase
 {
     use MocksHttp;
+    use LoadsStub;
 
     public function testSnapshotGainersLosersGetCall()
     {
@@ -15,9 +17,7 @@ class SnapshotGainersLosersTest extends \PHPUnit\Framework\TestCase
 
         $snapshotGainersLosers = new SnapshotGainersLosers('fake-api-key');
         $snapshotGainersLosers->httpClient = $this->getHttpMock(
-            $requestsContainer, [
-                'tickers' => [],
-            ]
+            $requestsContainer, $this->loadJsonStubFile('api/v2/snapshot/locale/global/markets/forex/gainers.json')
         );
 
         $snapshotGainersLosers->get();

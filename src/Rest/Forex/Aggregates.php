@@ -24,7 +24,7 @@ class Aggregates extends RestResource
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function get($tickerSymbol, $multiplier, $from, $to, $timespan = 'days', $params = []): array
+    public function get($tickerSymbol, $multiplier, $from, $to, $timespan = 'day', $params = []): array
     {
         return $this->_get('/v2/aggs/ticker/' . $tickerSymbol . '/range/' . $multiplier . '/' . $timespan . '/' . $from . '/' . $to, $params);
     }
