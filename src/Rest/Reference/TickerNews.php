@@ -8,6 +8,7 @@ use PolygonIO\Rest\RestResource;
  * Class TickerNews
  *
  * @package PolygonIO\rest\reference
+ * @deprecated
  */
 class TickerNews extends RestResource
 {

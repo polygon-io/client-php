@@ -8,6 +8,7 @@ use PolygonIO\Rest\RestResource;
  * Class Tickers
  *
  * @package PolygonIO\rest\reference
+ * @deprecated
  */
 class Tickers extends RestResource
 {

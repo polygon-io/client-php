@@ -3,11 +3,13 @@
 namespace PolygonIO\Tests\Rest\Forex;
 
 use PolygonIO\Rest\Forex\PreviousClose;
+use PolygonIO\Tests\Concerns\LoadsStub;
 use PolygonIO\Tests\Helpers\MocksHttp;
 
 class PreviousCloseTest extends \PHPUnit\Framework\TestCase
 {
     use MocksHttp;
+    use LoadsStub;
 
     public function testPreviousCloseGetCall()
     {
@@ -15,13 +17,11 @@ class PreviousCloseTest extends \PHPUnit\Framework\TestCase
 
         $previousClose = new PreviousClose('fake-api-key');
         $previousClose->httpClient = $this->getHttpMock(
-            $requestsContainer, [
-                'results' => [],
-            ]
+            $requestsContainer, $this->loadJsonStubFile('api/v2/aggs/ticker/C:EURUSD/prev.json')
         );
 
-        $previousClose->get('AAPL');
+        $previousClose->get('C:EURUSD');
 
-        $this->assertPath($requestsContainer, '/v2/aggs/ticker/AAPL/prev');
+        $this->assertPath($requestsContainer, '/v2/aggs/ticker/C:EURUSD/prev');
     }
 }

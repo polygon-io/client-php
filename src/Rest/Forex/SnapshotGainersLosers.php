@@ -33,7 +33,7 @@ class SnapshotGainersLosers extends RestResource
     {
         $response['tickers'] = array_map(
             function ($ticker) {
-                return Mappers::snapshotTicker($ticker);
+                return Mappers::snapshotTickerV2($ticker);
             },
             $response['tickers']
         );

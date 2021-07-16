@@ -97,6 +97,21 @@ class Mappers
      *
      * @return array
      */
+    public static function snapshotTickerV2(array $snap): array
+    {
+        $snap['day'] = Mappers::snapshotAgg($snap['day']);
+        $snap['lastQuote'] = Mappers::snapshotQuote($snap['lastQuote']);
+        $snap['min'] = Mappers::snapshotAgg($snap['min']);
+        $snap['prevDay'] = Mappers::snapshotAgg($snap['prevDay']);
+
+        return $snap;
+    }
+
+    /**
+     * @param array $snap
+     *
+     * @return array
+     */
     public static function snapshotAgg(array $snap): array
     {
         return self::map([
