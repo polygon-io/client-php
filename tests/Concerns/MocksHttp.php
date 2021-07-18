@@ -1,7 +1,6 @@
 <?php
 
-namespace PolygonIO\Tests\Helpers;
-
+namespace PolygonIO\Tests\Concerns;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;

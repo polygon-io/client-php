@@ -3,7 +3,7 @@
 namespace PolygonIO\Tests\Rest\Stocks;
 
 use PolygonIO\Rest\Stocks\GroupedDaily;
-use PolygonIO\Tests\Helpers\MocksHttp;
+use PolygonIO\Tests\Concerns\MocksHttp;
 
 class GroupedDailyTest extends \PHPUnit\Framework\TestCase
 {

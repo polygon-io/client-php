@@ -4,7 +4,7 @@ namespace PolygonIO\Tests\Rest\Stocks;
 
 use PolygonIO\Rest\Stocks\HistoricTradesV2;
 use PolygonIO\Tests\Concerns\LoadsStub;
-use PolygonIO\Tests\Helpers\MocksHttp;
+use PolygonIO\Tests\Concerns\MocksHttp;
 
 class HistoricTradesV2Test extends \PHPUnit\Framework\TestCase
 {

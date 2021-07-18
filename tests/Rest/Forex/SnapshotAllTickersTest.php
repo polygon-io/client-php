@@ -4,7 +4,7 @@ namespace PolygonIO\Tests\Rest\Forex;
 
 use PolygonIO\Rest\Forex\SnapshotAllTickers;
 use PolygonIO\Tests\Concerns\LoadsStub;
-use PolygonIO\Tests\Helpers\MocksHttp;
+use PolygonIO\Tests\Concerns\MocksHttp;
 
 class SnapshotAllTickersTest extends \PHPUnit\Framework\TestCase
 {

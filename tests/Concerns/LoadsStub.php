@@ -1,6 +1,5 @@
 <?php
 
-
 namespace PolygonIO\Tests\Concerns;
 
 trait LoadsStub

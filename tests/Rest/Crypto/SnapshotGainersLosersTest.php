@@ -5,7 +5,7 @@ namespace PolygonIO\Tests\Rest\Crypto;
 use PHPUnit\Framework\TestCase;
 use PolygonIO\Rest\Crypto\SnapshotGainersLosers;
 use PolygonIO\Tests\Concerns\LoadsStub;
-use PolygonIO\Tests\Helpers\MocksHttp;
+use PolygonIO\Tests\Concerns\MocksHttp;
 
 class SnapshotGainersLosersTest extends TestCase
 {
