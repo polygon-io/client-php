@@ -6,7 +6,7 @@ namespace PolygonIO\Tests\Rest\Reference;
 
 use PolygonIO\Rest\Reference\TickerDetails;
 use PolygonIO\Tests\Concerns\LoadsStub;
-use PolygonIO\Tests\Helpers\MocksHttp;
+use PolygonIO\Tests\Concerns\MocksHttp;
 
 class TickerDetailsTest extends \PHPUnit\Framework\TestCase
 {

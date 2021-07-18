@@ -4,7 +4,7 @@ namespace PolygonIO\Tests\Rest\Reference;
 
 use PolygonIO\Rest\Reference\StockDividends;
 use PolygonIO\Tests\Concerns\LoadsStub;
-use PolygonIO\Tests\Helpers\MocksHttp;
+use PolygonIO\Tests\Concerns\MocksHttp;
 
 class StockDividendsTest extends \PHPUnit\Framework\TestCase
 {

@@ -3,7 +3,7 @@
 namespace PolygonIO\Tests\Rest\Stocks;
 
 use PolygonIO\Rest\Stocks\HistoricQuotes;
-use PolygonIO\Tests\Helpers\MocksHttp;
+use PolygonIO\Tests\Concerns\MocksHttp;
 
 class HistoricQuotesTest extends \PHPUnit\Framework\TestCase
 {

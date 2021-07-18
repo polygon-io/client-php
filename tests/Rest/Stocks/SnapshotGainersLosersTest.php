@@ -3,7 +3,7 @@
 namespace PolygonIO\Tests\Rest\Stocks;
 
 use PolygonIO\Rest\Stocks\SnapshotGainersLosers;
-use PolygonIO\Tests\Helpers\MocksHttp;
+use PolygonIO\Tests\Concerns\MocksHttp;
 
 class SnapshotGainersLosersTest extends \PHPUnit\Framework\TestCase
 {

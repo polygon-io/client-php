@@ -3,7 +3,7 @@
 namespace PolygonIO\Tests\Rest\Stocks;
 
 use PolygonIO\Rest\Stocks\SnapshotAllTickers;
-use PolygonIO\Tests\Helpers\MocksHttp;
+use PolygonIO\Tests\Concerns\MocksHttp;
 
 class SnapshotAllTickersTest extends \PHPUnit\Framework\TestCase
 {

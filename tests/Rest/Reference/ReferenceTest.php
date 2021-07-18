@@ -5,7 +5,7 @@ namespace PolygonIO\Tests\Rest\Reference;
 use PHPUnit\Framework\TestCase;
 use PolygonIO\Rest\Reference\Reference;
 use PolygonIO\Rest\RestResource;
-use PolygonIO\Tests\Helpers\MocksHttp;
+use PolygonIO\Tests\Concerns\MocksHttp;
 
 class ReferenceTest extends TestCase
 {

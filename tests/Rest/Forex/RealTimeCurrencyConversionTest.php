@@ -4,7 +4,7 @@ namespace PolygonIO\Tests\Rest\Forex;
 
 use PolygonIO\Rest\Forex\RealTimeCurrencyConversion;
 use PolygonIO\Tests\Concerns\LoadsStub;
-use PolygonIO\Tests\Helpers\MocksHttp;
+use PolygonIO\Tests\Concerns\MocksHttp;
 
 class RealTimeCurrencyConversionTest extends \PHPUnit\Framework\TestCase
 {

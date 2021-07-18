@@ -5,7 +5,7 @@ namespace PolygonIO\Tests\Rest\Crypto;
 use PHPUnit\Framework\TestCase;
 use PolygonIO\Rest\Crypto\Aggregates;
 use PolygonIO\Tests\Concerns\LoadsStub;
-use PolygonIO\Tests\Helpers\MocksHttp;
+use PolygonIO\Tests\Concerns\MocksHttp;
 
 class AggregatesTest extends TestCase
 {

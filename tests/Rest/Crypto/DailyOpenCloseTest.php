@@ -4,7 +4,7 @@ namespace PolygonIO\Tests\Rest\Crypto;
 
 use PolygonIO\Rest\Crypto\DailyOpenClose;
 use PolygonIO\Tests\Concerns\LoadsStub;
-use PolygonIO\Tests\Helpers\MocksHttp;
+use PolygonIO\Tests\Concerns\MocksHttp;
 
 class DailyOpenCloseTest extends \PHPUnit\Framework\TestCase
 {

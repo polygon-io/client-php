@@ -5,7 +5,7 @@ namespace PolygonIO\Tests\Rest\Forex;
 use PHPUnit\Framework\TestCase;
 use PolygonIO\Rest\Forex\Forex;
 use PolygonIO\Rest\RestResource;
-use PolygonIO\Tests\Helpers\MocksHttp;
+use PolygonIO\Tests\Concerns\MocksHttp;
 
 class ForexTest extends TestCase
 {

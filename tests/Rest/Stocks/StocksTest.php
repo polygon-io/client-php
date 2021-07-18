@@ -5,7 +5,7 @@ namespace PolygonIO\Tests\Rest\Stocks;
 use PHPUnit\Framework\TestCase;
 use PolygonIO\Rest\RestResource;
 use PolygonIO\Rest\Stocks\Stocks;
-use PolygonIO\Tests\Helpers\MocksHttp;
+use PolygonIO\Tests\Concerns\MocksHttp;
 
 class StocksTest extends TestCase
 {

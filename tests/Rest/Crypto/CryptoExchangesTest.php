@@ -4,7 +4,7 @@ namespace PolygonIO\Tests\Rest\Crypto;
 
 use PolygonIO\Rest\Crypto\CryptoExchanges;
 use PolygonIO\Tests\Concerns\LoadsStub;
-use PolygonIO\Tests\Helpers\MocksHttp;
+use PolygonIO\Tests\Concerns\MocksHttp;
 
 class CryptoExchangesTest extends \PHPUnit\Framework\TestCase
 {

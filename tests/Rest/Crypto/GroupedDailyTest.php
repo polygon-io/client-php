@@ -4,7 +4,7 @@ namespace PolygonIO\Tests\Rest\Crypto;
 
 use PolygonIO\Rest\Crypto\GroupedDaily;
 use PolygonIO\Tests\Concerns\LoadsStub;
-use PolygonIO\Tests\Helpers\MocksHttp;
+use PolygonIO\Tests\Concerns\MocksHttp;
 
 class GroupedDailyTest extends \PHPUnit\Framework\TestCase
 {
