@@ -12,7 +12,7 @@ use PolygonIO\Rest\RestResource;
 class StockFinancials extends RestResource
 {
     protected $defaultParams = [
-       'limit' => 5,
+       'limit' => 10,
     ];
 
     /**
