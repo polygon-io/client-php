@@ -19,15 +19,29 @@ class WebsocketResource
     protected $topic;
 
     /**
+     * @var string
+     */
+    protected $socketUrl;
+
+    /**
      * WebsocketResource constructor.
      *
      * @param  string  $topic
      * @param  string  $apiKey
      */
-    public function __construct(string $topic, string $apiKey)
+    public function __construct(string $topic, string $apiKey, string $socketUrl = self::SOCKET_URI)
     {
         $this->apiKey = $apiKey;
         $this->topic = $topic;
+        $this->socketUrl = $socketUrl;
+    }
+
+    /**
+     * @param  string  $socketUrl
+     */
+    public function setSocketUrl(string $socketUrl)
+    {
+        $this->socketUrl = $socketUrl;
     }
 
     /**
@@ -41,7 +55,7 @@ class WebsocketResource
                 /**
                 * @var Websocket\Connection $connection
                 */
-                $connection = yield Websocket\connect(self::SOCKET_URI . '/' . $this->topic);
+                $connection = yield Websocket\connect($this->socketUrl . '/' . $this->topic);
                 yield $connection->send('{"action":"auth", "params":"' . $this->apiKey . '"}');
                 yield $connection->send(
                     json_encode(
