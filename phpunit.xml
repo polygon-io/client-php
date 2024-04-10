@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<phpunit>
-    <testsuite name='polygon.io'>
-        <directory suffix='Test.php'>./tests</directory>
-    </testsuite>
-</phpunit>
