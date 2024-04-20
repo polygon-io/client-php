@@ -1,5 +1,6 @@
 {
-    "description": "The future of fintech.",
+    "name": "polygon-io/api",
+    "description": "polygon.io php-client",
     "keywords": [
         "openapitools",
         "openapi-generator",
@@ -10,7 +11,8 @@
         "api"
     ],
     "homepage": "https://openapi-generator.tech",
-    "license": "unlicense",
+    "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "OpenAPI",
