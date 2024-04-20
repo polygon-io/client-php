@@ -109,11 +109,13 @@ class StocksV2BaseTest extends TestCase
     /**
      * Test attribute "t"
      */
+/*
     public function testPropertyT()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+*/
 
     /**
      * Test attribute "y"

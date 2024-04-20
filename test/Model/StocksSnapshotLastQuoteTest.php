@@ -100,20 +100,24 @@ class StocksSnapshotLastQuoteTest extends TestCase
     /**
      * Test attribute "p"
      */
+/*    
     public function testPropertyP()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+*/
 
     /**
      * Test attribute "s"
      */
+/*
     public function testPropertyS()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+*/
 
     /**
      * Test attribute "t"

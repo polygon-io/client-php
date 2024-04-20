@@ -163,11 +163,13 @@ class LastTradeOptions200ResponseResultsTest extends TestCase
     /**
      * Test attribute "t"
      */
+/*    
     public function testPropertyT()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+*/
 
     /**
      * Test attribute "x"

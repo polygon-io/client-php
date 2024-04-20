@@ -145,12 +145,13 @@ class LastQuote200ResponseResultsTest extends TestCase
     /**
      * Test attribute "p"
      */
+/*
     public function testPropertyP()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
-
+/*
     /**
      * Test attribute "q"
      */
@@ -163,29 +164,34 @@ class LastQuote200ResponseResultsTest extends TestCase
     /**
      * Test attribute "s"
      */
+    /*
     public function testPropertyS()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+*/
 
     /**
      * Test attribute "t"
      */
+/*    
     public function testPropertyT()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
-
+*/
     /**
      * Test attribute "x"
      */
+/*
     public function testPropertyX()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+*/
 
     /**
      * Test attribute "y"

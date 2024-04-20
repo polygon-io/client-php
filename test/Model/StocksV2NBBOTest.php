@@ -109,11 +109,13 @@ class StocksV2NBBOTest extends TestCase
     /**
      * Test attribute "t"
      */
+/*    
     public function testPropertyT()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+*/
 
     /**
      * Test attribute "y"
@@ -172,30 +174,36 @@ class StocksV2NBBOTest extends TestCase
     /**
      * Test attribute "p"
      */
+/*
     public function testPropertyP()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+*/
 
     /**
      * Test attribute "s"
      */
+/*
     public function testPropertyS()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+*/
 
     /**
      * Test attribute "x"
      */
+/*
     public function testPropertyX()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
-
+*/
+    
     /**
      * Test attribute "z"
      */

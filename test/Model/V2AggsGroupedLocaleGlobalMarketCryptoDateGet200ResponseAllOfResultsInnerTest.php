@@ -136,12 +136,14 @@ class V2AggsGroupedLocaleGlobalMarketCryptoDateGet200ResponseAllOfResultsInnerTe
     /**
      * Test attribute "t"
      */
+/*
     public function testPropertyT()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
-
+*/
+    
     /**
      * Test attribute "v"
      */
