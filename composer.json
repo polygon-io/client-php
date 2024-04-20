@@ -36,5 +36,8 @@
     },
     "autoload-dev": {
         "psr-4": { "OpenAPI\\Client\\Test\\" : "test/" }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit"
     }
 }
