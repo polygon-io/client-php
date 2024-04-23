@@ -15,8 +15,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "OpenAPI",
-            "homepage": "https://openapi-generator.tech"
+            "name": "Polygon.io, Inc.",
+            "homepage": "https://polygon.io/"
         }
     ],
     "require": {
