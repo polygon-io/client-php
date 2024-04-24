@@ -2,6 +2,14 @@
 
 Welcome to the official PHP client library for the [Polygon](https://polygon.io/) REST and WebSocket API. To get started, please see the [Getting Started](https://polygon.io/docs/stocks/getting-started) section in our documentation, view the [API documentation](./docs/Api/) directory for code snippets, or see the [Model documentation](./docs/Model/) to learn more about the data structures.
 
+This version is an **experimental release and is under active development**. We are working to add more features and improve its stability and performance. Please be aware that this version might undergo significant changes, and some functionality may be incomplete or subject to modification.
+
+## Roadmap Features
+
+* **Pagination over next_url and combine result sets**: We plan to introduce enhanced pagination capabilities that will allow users to easily navigate through API responses using the next_url provided and seamlessly combine result sets for comprehensive data analysis.
+* **Adding Tracing**: To aid in debugging and enhance transparency, we aim to implement tracing features that will allow users to log detailed information about their API requests. This includes the requested URL, parameters, and full request and response headers.
+* **WebSocket Support**: In our effort to provide real-time data access, we will be integrating WebSocket support into the client library. This will enable users to establish persistent connections for live data feeds with minimal latency.
+
 ## Installation & Usage
 
 ### Prerequisites
