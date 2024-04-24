@@ -1,4 +1,4 @@
-# Polygon PHP Client - WebSocket & RESTful APIs
+# Polygon PHP Client - RESTful APIs
 
 Welcome to the official PHP client library for the [Polygon](https://polygon.io/) REST and WebSocket API. To get started, please see the [Getting Started](https://polygon.io/docs/stocks/getting-started) section in our documentation, view the [API documentation](./docs/Api/) directory for code snippets, or see the [Model documentation](./docs/Model/) to learn more about the data structures.
 
