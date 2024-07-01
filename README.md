@@ -94,7 +94,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *https://api.polygon.io*
+All URIs are relative to api.polygon.io:
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
